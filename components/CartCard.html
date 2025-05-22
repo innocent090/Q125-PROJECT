@@ -1,0 +1,108 @@
+<!-- <template>
+  <div class="cart-card">
+    <img :src="item.image" alt="item.name" />
+    <div>
+      <h4>{{ item.name }}</h4>
+      <p>Quantity: {{ item.quantity }}</p>
+      <p>Total: ${{ item.price * item.quantity }}</p>
+      <button @click="$emit('remove', item.id)">Remove</button>
+    </div>
+  </div>
+</template>
+
+<script setup>
+defineProps(['item'])
+</script> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart Card</title>
+  <style>
+    .cart-card {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+
+    .cart-card img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .cart-card div {
+      flex: 1;
+    }
+
+    .cart-card h4 {
+      margin: 0;
+      font-size: 1.2rem;
+    }
+
+    .cart-card p {
+      margin: 0.5rem 0;
+    }
+
+    .cart-card button {
+      background-color: #f44336;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .cart-card button:hover {
+      background-color: #d32f2f;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <!-- Cart item template -->
+  </div>
+
+  <script>
+    // Example item data
+    const item = {
+      id: 1,
+      image: 'https://via.placeholder.com/100',
+      name: 'Sample Item',
+      quantity: 2,
+      price: 20
+    };
+
+    // Function to render the cart card
+    function renderCartCard(item) {
+      const app = document.getElementById('app');
+      app.innerHTML = `
+        <div class="cart-card">
+          <img src="${item.image}" alt="${item.name}" />
+          <div>
+            <h4>${item.name}</h4>
+            <p>Quantity: ${item.quantity}</p>
+            <p>Total: $${item.price * item.quantity}</p>
+            <button onclick="removeItem(${item.id})">Remove</button>
+          </div>
+        </div>
+      `;
+    }
+
+    // Function to handle the remove action
+    function removeItem(id) {
+      alert(`Item with ID ${id} removed!`);
+      // Add logic to remove the item from your data source
+    }
+
+    // Render the cart card
+    renderCartCard(item);
+  </script>
+</body>
+</html>

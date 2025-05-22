@@ -1,0 +1,221 @@
+<!-- <template>
+  <section class="top-category">
+    <h2>Top Categories</h2>
+    <p>Checkout our top-categories</p>
+    <ul class="categories-grid">
+      <li v-for="cat in categories" :key="cat.name" class="category-card">
+        <img :src="cat.image" :alt="cat.name" class="category-image" />
+        <div class="category-name">{{ cat.name }}</div>
+        <div class="category-count">{{ cat.count }} products</div>
+      </li>
+    </ul>
+  </section>
+</template>
+
+<script setup>
+defineProps(['categories'])
+</script>
+
+<style scoped>
+.top-category {
+  text-align: left;
+  padding: 2rem 4rem;
+  background-color: #f9f9f9;
+}
+
+p {
+  font-size: x-small;
+  color: #979494;
+}
+
+.categories-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  gap: 2rem;
+  margin-top: 2rem;
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+.category-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 14%;
+}
+
+.category-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  margin-bottom: 0.5rem;
+}
+
+.category-name {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+  color: #333;
+}
+
+.category-count {
+  font-size: x-small;
+  color: #777;
+}
+
+@media (max-width : 768px) {
+  .top-category {
+    padding: 12px 2rem;
+  }
+
+  .categories-grid {
+    display: grid;
+    width: 100%;
+    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .category-card {
+    width: auto;
+  }
+}
+</style> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Top Categories</title>
+  <style>
+    .top-category {
+      text-align: left;
+      padding: 2rem 4rem;
+      background-color: #f9f9f9;
+      font-family: Arial, sans-serif;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .top-category h2 {
+      margin-bottom: 0.5rem;
+      color: #333;
+    }
+
+    .top-category p {
+      font-size: x-small;
+      color: #979494;
+      margin-top: 0;
+    }
+
+    .categories-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: left;
+      gap: 2rem;
+      margin-top: 2rem;
+      list-style: none;
+      padding: 0;
+      width: 100%;
+    }
+
+    .category-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 14%;
+      min-width: 100px;
+    }
+
+    .category-image {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid #ccc;
+      margin-bottom: 0.5rem;
+      transition: transform 0.3s ease;
+    }
+
+    .category-image:hover {
+      transform: scale(1.05);
+    }
+
+    .category-name {
+      font-weight: bold;
+      margin-bottom: 0.25rem;
+      color: #333;
+      text-align: center;
+    }
+
+    .category-count {
+      font-size: x-small;
+      color: #777;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .top-category {
+        padding: 12px 2rem;
+      }
+
+      .categories-grid {
+        display: grid;
+        width: 100%;
+        gap: 1rem;
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .category-card {
+        width: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="top-category">
+    <h2>Top Categories</h2>
+    <p>Checkout our top-categories</p>
+    <ul class="categories-grid">
+      <li class="category-card">
+        <img src="https://via.placeholder.com/150" alt="Electronics" class="category-image" />
+        <div class="category-name">Electronics</div>
+        <div class="category-count">20 products</div>
+      </li>
+      <li class="category-card">
+        <img src="https://via.placeholder.com/150" alt="Fashion" class="category-image" />
+        <div class="category-name">Fashion</div>
+        <div class="category-count">20 products</div>
+      </li>
+      <li class="category-card">
+        <img src="https://via.placeholder.com/150" alt="Home & Garden" class="category-image" />
+        <div class="category-name">Home & Garden</div>
+        <div class="category-count">20 products</div>
+      </li>
+      <li class="category-card">
+        <img src="https://via.placeholder.com/150" alt="Beauty" class="category-image" />
+        <div class="category-name">Beauty</div>
+        <div class="category-count">20 products</div>
+      </li>
+      <li class="category-card">
+        <img src="https://via.placeholder.com/150" alt="Sports" class="category-image" />
+        <div class="category-name">Sports</div>
+        <div class="category-count">20 products</div>
+      </li>
+      <li class="category-card">
+        <img src="https://via.placeholder.com/150" alt="Toys" class="category-image" />
+        <div class="category-name">Toys</div>
+        <div class="category-count">20 products</div>
+      </li>
+      <!-- <li class="category-card">
+        <img src="https://via.placeholder.com/150" alt="Books" class="category-image" />
+        <div class="category-name">Books</div>
+        <div class="category-count">37 products</div>
+      </li>
+    </ul> -->
+  </section>
+</body>
+</html>

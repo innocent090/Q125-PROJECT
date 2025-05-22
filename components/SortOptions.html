@@ -1,0 +1,401 @@
+<!-- <template>
+  <div class="sort-options">
+    <div class="sort-by">
+      <span>Sort by:</span>
+      <select class="dropdown" @change="$emit('sort-changed', $event.target.value)">
+        <option value="">None</option>
+        <option value="featured">Featured</option>
+        <option value="rating">Rating</option>
+        <option value="newest">Newest</option>
+        <option value="price-asc">Price: Low to High</option>
+        <option value="price-desc">Price: High to Low</option>
+        <option value="title-a-z">Title: A to Z</option>
+        <option value="title-z-a">Title: Z to A</option>
+      </select>
+    </div>
+
+    <div class="usage-filters" v-if="isDesktop && usageTypes.length">
+      <!-- Show first 4 buttons 
+      <button v-for="(use, index) in visibleUsages" :key="use" @click="handleUsageClick(use)"
+        :class="{ active: use === selectedUsage }">
+        {{ use }}
+      </button>
+
+      <!-- Ellipsis button if more than 4 
+      <div v-if="hiddenUsages.length" class="dropdown-container">
+        <button class="ellipsis-button" @click="toggleDropdown">…</button>
+        <div v-if="dropdownOpen" class="dropdown-menu">
+          <button v-for="use in hiddenUsages" :key="use" @click="handleUsageClick(use)"
+            :class="{ active: use === selectedUsage }">
+            {{ use }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script setup>
+import { ref, computed } from 'vue'
+
+const { usageTypes } = defineProps({
+  usageTypes: {
+    type: Array,
+    default: () => [],
+  },
+  isDesktop: Boolean,
+})
+
+const emit = defineEmits(['usage-changed'])
+
+const selectedUsage = ref(null)
+const dropdownOpen = ref(false)
+
+function handleUsageClick(use) {
+  selectedUsage.value = use
+  emit('usage-changed', use)
+  dropdownOpen.value = false // close dropdown after selection
+}
+
+function toggleDropdown() {
+  dropdownOpen.value = !dropdownOpen.value
+}
+
+const visibleUsages = computed(() => usageTypes.slice(0, 4))
+const hiddenUsages = computed(() => usageTypes.slice(4))
+</script>
+
+
+<style scoped>
+.sort-options {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  padding: 20px 0;
+  margin: 12px 0;
+  width: 100%;
+}
+
+.dropdown {
+  padding: 6px;
+  border: 2px #f0f0f0 solid;
+  border-radius: 6px;
+}
+
+.sort-by {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.usage-filters {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+}
+
+.usage-filters button {
+  padding: 0.4rem 0.8rem;
+  border: 1px solid #ccc;
+  background-color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  vertical-align: middle;
+}
+
+.usage-filters button.active {
+  color: #04112b;
+  border-color: #060d2c;
+}
+
+.usage-filters .ellipsis-button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  background: white;
+  font-weight: bold;
+  cursor: pointer;
+  line-height: 0;
+  padding: 0;
+}
+
+.dropdown-container {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 36px;
+  left: 0;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  min-width: 120px;
+  z-index: 10;
+}
+
+.dropdown-menu button {
+  padding: 0.4rem 0.8rem;
+  border: none;
+  background: white;
+  text-align: left;
+  cursor: pointer;
+}
+
+.dropdown-menu button:hover {
+  background-color: #f0f0f0;
+}
+</style> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sort Options</title>
+  <style>
+    .sort-options {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      padding: 20px 0;
+      margin: 12px 0;
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+      font-family: Arial, sans-serif;
+    }
+
+    .dropdown {
+      padding: 6px;
+      border: 2px #f0f0f0 solid;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    .sort-by {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .usage-filters {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      position: relative;
+    }
+
+    .usage-filters button {
+      padding: 0.4rem 0.8rem;
+      border: 1px solid #ccc;
+      background-color: white;
+      cursor: pointer;
+      border-radius: 4px;
+      vertical-align: middle;
+      font-size: 14px;
+      transition: all 0.2s;
+    }
+
+    .usage-filters button:hover {
+      background-color: #f5f5f5;
+    }
+
+    .usage-filters button.active {
+      color: #04112b;
+      border-color: #060d2c;
+      background-color: #f0f0f0;
+    }
+
+    .usage-filters .ellipsis-button {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 1px solid #ccc;
+      background: white;
+      font-weight: bold;
+      cursor: pointer;
+      line-height: 0;
+      padding: 0;
+      font-size: 18px;
+    }
+
+    .dropdown-container {
+      position: relative;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 36px;
+      left: 0;
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+      min-width: 120px;
+      z-index: 10;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .dropdown-menu button {
+      padding: 0.4rem 0.8rem;
+      border: none;
+      background: white;
+      text-align: left;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .dropdown-menu button:hover {
+      background-color: #f0f0f0;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .sort-options {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      .sort-by {
+        justify-content: flex-end;
+      }
+      
+      .usage-filters {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="sort-options">
+    <div class="sort-by">
+      <span>Sort by:</span>
+      <select class="dropdown" id="sort-select">
+        <option value="">None</option>
+        <option value="featured">Featured</option>
+        <option value="rating">Rating</option>
+        <option value="newest">Newest</option>
+        <option value="price-asc">Price: Low to High</option>
+        <option value="price-desc">Price: High to Low</option>
+        <option value="title-a-z">Title: A to Z</option>
+        <option value="title-z-a">Title: Z to A</option>
+      </select>
+    </div>
+
+    <div class="usage-filters" id="usage-filters">
+      <!-- Buttons will be added by JavaScript -->
+    </div>
+  </div>
+
+  <script>
+    // Sample usage types data
+    const usageTypes = [
+      "All", 
+      "Commercial", 
+      "Residential", 
+      "Industrial", 
+      "Healthcare", 
+      "Education",
+      "Hospitality",
+      "Retail"
+    ];
+    
+    const isDesktop = window.innerWidth > 768;
+    let selectedUsage = null;
+    let dropdownOpen = false;
+
+    // Initialize the component
+    function initSortOptions() {
+      const usageFilters = document.getElementById('usage-filters');
+      const sortSelect = document.getElementById('sort-select');
+      
+      // Add event listener for sort select
+      sortSelect.addEventListener('change', function(e) {
+        console.log('Sort changed to:', e.target.value);
+        // Here you would emit the event in Vue
+      });
+
+      // Only show usage filters if desktop and we have usage types
+      if (isDesktop && usageTypes.length) {
+        const visibleUsages = usageTypes.slice(0, 4);
+        const hiddenUsages = usageTypes.slice(4);
+
+        // Add visible buttons
+        visibleUsages.forEach(use => {
+          const button = document.createElement('button');
+          button.textContent = use;
+          button.addEventListener('click', () => handleUsageClick(use));
+          if (use === selectedUsage) {
+            button.classList.add('active');
+          }
+          usageFilters.appendChild(button);
+        });
+
+        // Add ellipsis and dropdown if there are hidden usages
+        if (hiddenUsages.length) {
+          const dropdownContainer = document.createElement('div');
+          dropdownContainer.className = 'dropdown-container';
+          
+          const ellipsisButton = document.createElement('button');
+          ellipsisButton.className = 'ellipsis-button';
+          ellipsisButton.textContent = '…';
+          ellipsisButton.addEventListener('click', toggleDropdown);
+          dropdownContainer.appendChild(ellipsisButton);
+          
+          const dropdownMenu = document.createElement('div');
+          dropdownMenu.className = 'dropdown-menu';
+          dropdownMenu.style.display = 'none';
+          
+          hiddenUsages.forEach(use => {
+            const button = document.createElement('button');
+            button.textContent = use;
+            button.addEventListener('click', () => handleUsageClick(use));
+            if (use === selectedUsage) {
+              button.classList.add('active');
+            }
+            dropdownMenu.appendChild(button);
+          });
+          
+          dropdownContainer.appendChild(dropdownMenu);
+          usageFilters.appendChild(dropdownContainer);
+        }
+      }
+    }
+
+    function handleUsageClick(use) {
+      selectedUsage = use;
+      console.log('Usage changed to:', use);
+      // Here you would emit the event in Vue
+      dropdownOpen = false;
+      updateActiveButtons();
+    }
+
+    function toggleDropdown() {
+      dropdownOpen = !dropdownOpen;
+      const dropdownMenu = document.querySelector('.dropdown-menu');
+      if (dropdownMenu) {
+        dropdownMenu.style.display = dropdownOpen ? 'flex' : 'none';
+      }
+    }
+
+    function updateActiveButtons() {
+      document.querySelectorAll('.usage-filters button').forEach(button => {
+        button.classList.remove('active');
+        if (button.textContent === selectedUsage) {
+          button.classList.add('active');
+        }
+      });
+    }
+
+    // Initialize when page loads
+    window.addEventListener('DOMContentLoaded', initSortOptions);
+  </script>
+</body>
+</html>

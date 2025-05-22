@@ -1,0 +1,118 @@
+<!-- <template>
+    <div class="order-summary">
+        <h3>Order Summary</h3>
+        <ul>
+            <li v-for="item in cart" :key="item.id">
+                {{ item.name }} x {{ item.quantity }} = ${{ item.price * item.quantity }}
+            </li>
+        </ul>
+        <p>Total: ${{ total }}</p>
+        <button>Checkout</button>
+    </div>
+</template>
+
+<script setup>
+import { computed } from 'vue'
+import { useCartStore } from '../stores/cart'
+
+const cart = useCartStore()
+
+const total = computed(() => {
+    return cart.items.reduce((sum, item) => sum + item.price * item.quantity, 0)
+})
+</script> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Summary</title>
+  <style>
+    .order-summary {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      border: 1px solid #ddd;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    .order-summary h3 {
+      margin-bottom: 1rem;
+    }
+
+    .order-summary ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem 0;
+    }
+
+    .order-summary li {
+      margin-bottom: 0.5rem;
+    }
+
+    .order-summary p {
+      font-weight: bold;
+      margin-top: 1rem;
+    }
+
+    .order-summary button {
+      background-color: #053379;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .order-summary button:hover {
+      background-color: #041b5d;
+    }
+  </style>
+</head>
+<body>
+  <div class="order-summary">
+    <h3>Order Summary</h3>
+    <ul id="cart-items">
+      <!-- Items will be dynamically added here -->
+    </ul>
+    <p id="total-price">Total: $0</p>
+    <button onclick="checkout()">Checkout</button>
+  </div>
+
+  <script>
+    // Mock cart data
+    const cart = [
+      { id: 1, name: "Laptop", price: 1000, quantity: 1 },
+      { id: 2, name: "Mouse", price: 25, quantity: 2 },
+      { id: 3, name: "Keyboard", price: 50, quantity: 1 }
+    ];
+
+    // Calculate total price
+    function calculateTotal(cart) {
+      return cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    }
+
+    // Render cart items and total price
+    function renderOrderSummary(cart) {
+      const cartItemsContainer = document.getElementById("cart-items");
+      const totalPriceContainer = document.getElementById("total-price");
+
+      cartItemsContainer.innerHTML = cart.map(item => `
+        <li>${item.name} x ${item.quantity} = $${item.price * item.quantity}</li>
+      `).join("");
+
+      const total = calculateTotal(cart);
+      totalPriceContainer.textContent = `Total: $${total}`;
+    }
+
+    // Checkout action
+    function checkout() {
+      alert("Proceeding to checkout...");
+    }
+
+    // Initial render
+    renderOrderSummary(cart);
+  </script>
+</body>
+</html>

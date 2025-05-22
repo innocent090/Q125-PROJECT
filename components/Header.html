@@ -1,0 +1,384 @@
+<!-- <template>
+  <header class="header-wrapper">
+    <div class="top-row">
+      <div class="logo-wrapper">
+        <div class="logo">
+          <router-link to="/" class="router-link links">
+            <h1>LOGO</h1>
+          </router-link>
+        </div>
+        <div class="search-bar1">
+          <input placeholder="Search for products, brands.." class="input" name="search" type="text" />
+          <button class="button1">Search</button>
+        </div>
+      </div>
+
+      <div class="end">
+        <router-link to="/wishlist" class="router-link links">
+          <HeartIcon class="icon" />
+          <span>Wishlist</span>
+        </router-link>
+        <router-link to="/cart" class="router-link links">
+          <ShoppingCartIcon class="icon" />
+          <span>Cart</span>
+        </router-link>
+      </div>
+    </div>
+
+    <div class="search-row">
+      <div class="search-bar">
+        <input placeholder="Search for products, brands.." class="input" name="search" type="text" />
+        <button class="button1">Search</button>
+      </div>
+    </div>
+  </header>
+</template>
+
+
+
+<script setup>
+import { ShoppingCartIcon, HeartIcon } from '@heroicons/vue/outline'
+</script>
+
+<style scoped>
+.header-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 14px 12px;
+  border-bottom: 1px #dddddd solid;
+  gap: 0.5rem;
+}
+
+.top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-row {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+}
+
+.input {
+  height: 34px;
+  font-size: 14px;
+  color: #242222;
+  padding: 0 12px;
+  border: 1px solid #bebebe;
+  border-top-left-radius: 0.5em;
+  border-bottom-left-radius: 0.5em;
+  outline: none;
+  box-sizing: border-box;
+  width: 80%;
+}
+
+.button1 {
+  height: 34px;
+  font-size: 14px;
+  padding: 0 16px;
+  background-color: #053379;
+  color: #fff;
+  border: none;
+  border-top-right-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+}
+
+.end {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo h1 {
+  font-family: "Roboto", sans-serif;
+}
+
+.search-bar1 {
+  display: none;
+}
+
+/* Desktop layout */
+@media (min-width: 768px) {
+  .header-wrapper {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .top-row {
+    width: auto;
+  }
+
+  .search-row {
+    width: 70%;
+    display: none;
+  }
+
+  .search-bar1 {
+    display: flex;
+  }
+}
+
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Hide .search-bar1 by default (mobile) */
+.search-bar1 {
+  display: none;
+}
+
+/* Desktop layout */
+@media (min-width: 768px) {
+  .header-wrapper {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 12px 4rem;
+  }
+
+  .top-row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo-wrapper {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .search-bar1 {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .search-row {
+    display: none;
+  }
+}
+</style> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Header</title>
+  <style>
+    /* Add your CSS styles here (copy from the <style scoped> section above) */
+      .header-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 14px 12px;
+  border-bottom: 1px #dddddd solid;
+  gap: 0.5rem;
+}
+
+.top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-row {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+}
+
+.input {
+  height: 34px;
+  font-size: 14px;
+  color: #242222;
+  padding: 0 12px;
+  border: 1px solid #bebebe;
+  border-top-left-radius: 0.5em;
+  border-bottom-left-radius: 0.5em;
+  outline: none;
+  box-sizing: border-box;
+  width: 80%;
+}
+
+.button1 {
+  height: 34px;
+  font-size: 14px;
+  padding: 0 16px;
+  background-color: #053379;
+  color: #fff;
+  border: none;
+  border-top-right-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+}
+
+.end {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo h1 {
+  font-family: "Roboto", sans-serif;
+}
+
+.search-bar1 {
+  display: none;
+}
+
+/* Desktop layout */
+@media (min-width: 768px) {
+  .header-wrapper {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .top-row {
+    width: auto;
+  }
+
+  .search-row {
+    width: 70%;
+    display: none;
+  }
+
+  .search-bar1 {
+    display: flex;
+  }
+}
+
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Hide .search-bar1 by default (mobile) */
+.search-bar1 {
+  display: none;
+}
+
+/* Desktop layout */
+@media (min-width: 768px) {
+  .header-wrapper {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 12px 4rem;
+  }
+
+  .top-row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo-wrapper {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .search-bar1 {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .search-row {
+    display: none;
+  }
+}
+  </style>
+</head>
+<body>
+  <header class="header-wrapper">
+    <div class="top-row">
+      <div class="logo-wrapper">
+        <div class="logo">
+          <a href="/" class="router-link links">
+            <h1>LOGO</h1>
+          </a>
+        </div>
+        <div class="search-bar1">
+          <input placeholder="Search for products, brands.." class="input" name="search" type="text" />
+          <button class="button1">Search</button>
+        </div>
+      </div>
+
+      <div class="end">
+        <a href="/wishlist" class="router-link links">
+          <img src="heart-icon.svg" alt="Wishlist Icon" class="icon" />
+          <span>Wishlist</span>
+        </a>
+        <a href="/cart" class="router-link links">
+          <img src="shopping-cart-icon.svg" alt="Cart Icon" class="icon" />
+          <span>Cart</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="search-row">
+      <div class="search-bar">
+        <input placeholder="Search for products, brands.." class="input" name="search" type="text" />
+        <button class="button1">Search</button>
+      </div>
+    </div>
+  </header>
+</body>
+</html>
+

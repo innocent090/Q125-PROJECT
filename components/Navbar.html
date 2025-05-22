@@ -1,0 +1,118 @@
+<!-- <template>
+    <nav class="p-4 bg-gray-100">
+        <div v-if="!isCategoryView" class="cat">
+            <router-link v-for="category in categories" :key="category" :to="`/category/${category.toLowerCase()}`"
+                class="nav-link">
+                {{ category }}
+            </router-link>
+        </div>
+
+        <div v-else class="cat">
+            <router-link to="/" class="nav-link">Home / </router-link>
+            <span class="nav-link">{{ routeCategoryName }}</span>
+        </div>
+    </nav>
+</template>
+
+<script setup>
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
+
+const categories = [
+    'Laptops',
+    'Desktops',
+    'Printers',
+    'Monitors',
+    'Phones',
+    'Accessories',
+]
+
+const isCategoryView = route.path.startsWith('/category/')
+const routeCategoryName = route.params.name?.charAt(0).toUpperCase() + route.params.name?.slice(1)
+</script>
+
+<style scoped>
+.nav-link {
+  color: #5e5c5c;           /* Dark gray */
+  text-decoration: none; /* No underline */
+  font-weight: bold;
+  font-size: smaller;
+}
+
+.nav-link:hover {
+  color: #555555;
+}
+
+.cat{
+    display: flex;
+    gap: 12px;
+    font-family: "Roboto", sans-serif;
+}
+nav{
+    padding: 24px 4rem;
+    border-bottom: 1px #dddddd solid;
+}
+@media (max-width : 768px) {
+    nav{
+        padding: 12px 2rem;
+    }
+}
+</style> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navigation</title>
+  <style>
+    .nav-link {
+      color: #5e5c5c; /* Dark gray */
+      text-decoration: none; /* No underline */
+      font-weight: bold;
+      font-size: smaller;
+    }
+
+    .nav-link:hover {
+      color: #555555;
+    }
+
+    .cat {
+      display: flex;
+      gap: 12px;
+      font-family: "Roboto", sans-serif;
+    }
+
+    nav {
+      padding: 24px 4rem;
+      border-bottom: 1px #dddddd solid;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        padding: 12px 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="p-4 bg-gray-100">
+    <!-- Category Navigation -->
+    <div class="cat">
+      <a href="/category/laptops" class="nav-link">Laptops</a>
+      <a href="/category/desktops" class="nav-link">Desktops</a>
+      <a href="/category/printers" class="nav-link">Printers</a>
+      <a href="/category/monitors" class="nav-link">Monitors</a>
+      <a href="/category/phones" class="nav-link">Phones</a>
+      <a href="/category/accessories" class="nav-link">Accessories</a>
+    </div>
+
+    <!-- Alternate View -->
+    <div class="cat" style="display:none;">
+      <a href="/" class="nav-link">Home / </a>
+      <span class="nav-link">Category Name</span>
+    </div>
+  </nav>
+</body>
+</html>
