@@ -5,43 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hero Section</title>
   <style>
-    .hero {
+    .top-header {
+      width: 100%;
       background-color: #224893;
-      padding: 1rem;
+      padding: 5px 20px;
       display: flex;
       justify-content: flex-end;
-    }
-
-    .new-arrivals {
-      display: flex;
       align-items: center;
-      gap: 0.5rem; /* little gap between items */
-      color: white;
+      font-size: 14px;
+      color: #000;
+      font-family: 'Open Sans', Arial, sans-serif;
     }
 
-    .new-tag {
-      background: transparent;
-      border: 1px solid white;
+    .top-header a {
+      text-decoration: none;
       color: white;
-      padding: 0.3rem 0.8rem;
-      border-radius: 9999px; /* capsule shape */
-      font-size: 0.875rem;
-      font-weight: 600;
-      cursor: default;
+      margin-right: 50px;
+      line-height: 50px;
     }
 
-    .sale-text {
-      font-size: 0.875rem;
-      font-weight: 400;
+    .top-header .top-header-new {
+      background-color: white;
+      color: #224893;
+      padding: 5px 10px;
+      border-radius: 15px;
+      font-weight: bold;
+      margin-right: 10px;
     }
-  </style>
+  </style> 
 </head>
 <body>
-  <section class="hero">
-    <div class="new-arrivals">
-      <button class="new-tag">New</button>
-      <span class="sale-text">Sale ₦1200 Off Your First Order</span>
-    </div>
-  </section>
+  <div class="top-header">
+    <span class="top-header-new">New</span>
+    <a href="#">Sale ₦1200 Off Your First Order</a>
+  </div>
 </body>
 </html>

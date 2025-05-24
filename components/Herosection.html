@@ -1,137 +1,4 @@
-<!-- <template>
-  <section class="hero">
-    <div class="hero-content">
-      <div class="new-arrivals">
-        New Arrivals
-        <span><img src="../assets/images/newArrivals.svg" alt="" /></span>
-      </div>
-      <h2>Smart <b>Gadgets,</b> <br /> <b>Smarter</b> Living</h2>
-      <p>
-        Experience the latest in tech with unbeatable quality and performance.
-        Exclusive deals available for a limited time.
-      </p>
-      <div class="hero-buttons">
-        <button class="btn primary">Shop Now</button>
-        <button class="btn secondary">View All Products</button>
-      </div>
-    </div>
-
-    <div class="hero-image">
-      <img src="../assets/images/hero-lappy.png" alt="Laptop" />
-    </div>
-  </section>
-</template>
-
-<style scoped>
-.hero {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #f7f7f7;
-  /* very light gray */
-  padding: 40px 4rem;
-}
-
-.hero-content {
-  width: 50%;
-  max-width: 1500px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.new-arrivals {
-  position: relative;
-  background-color: #e4edff;
-  padding: 12px 20px;
-  border-radius: 24px;
-  font-weight: bold;
-  font-size: 10px;
-  display: inline-block;
-  width: fit-content;
-  color: #053379;
-}
-
-.new-arrivals span {
-  position: absolute;
-  top: -15px;
-  right: -15px;
-}
-
-h2 {
-  font-size: 46px;
-  font-weight: 300;
-  margin: 0;
-}
-
-p {
-  font-size: 12px;
-  line-height: 1.6;
-  color: #444;
-  margin: 0;
-}
-
-.hero-buttons {
-  display: flex;
-  gap: 16px;
-}
-
-.btn {
-  padding: 12px 24px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 600;
-  font-size: 10px;
-}
-
-.primary {
-  background-color: #053379;
-  color: #fff;
-}
-
-.secondary {
-  background-color: #fcfbfb;
-  color: #053379;
-  border: 1px #c0bfbf solid;
-}
-
-.hero-image img {
-  width: 100%;
-  max-width: 400px;
-  height: auto;
-}
-
-.hero-image {
-  width: 50%;
-  display: flex;
-  justify-content: center;
-}
-
-@media (max-width: 768px) {
-  .hero {
-    flex-direction: column;
-    padding: 1.5rem 2rem;
-    height: 80vh;
-  }
-
-  .hero-image {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-
-
-  .hero-content {
-    width: 100%;
-    max-width: 1500px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-}
-</style> -->
-
+<!-- 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -252,7 +119,7 @@ p {
     <div class="hero-content">
       <div class="new-arrivals">
         New Arrivals
-        <span><img src="path/to/newArrivals.svg" alt="" /></span>
+        <span><img src="../images/newArrivals.svg" alt="" /></span>
       </div>
       <h2>Smart <b>Gadgets,</b> <br /> <b>Smarter</b> Living</h2>
       <p>
@@ -266,7 +133,120 @@ p {
     </div>
 
     <div class="hero-image">
-      <img src="path/to/hero-lappy.png" alt="Laptop" />
+      <img src="../images/hero-lappy.png" alt="Laptop" />
+    </div>
+  </section>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', Arial, sans-serif;
+      overflow-x: hidden;
+    }
+    .hero {
+      display: flex;
+      align-items: center;
+      padding: 50px 20px;
+      flex-wrap: wrap;
+      margin-left: 50px;
+    }
+
+    .hero .text {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .hero h1 {
+      font-size: 45px;
+      margin: 0;
+      font-family: 'Open Sans', Arial, sans-serif;
+    }
+
+    .hero p {
+      margin: 20px 0;
+      font-size: 16px;
+      color: #555;
+    }
+
+    .hero .buttons {
+      display: flex;
+      gap: 15px;
+    }
+
+    .hero .buttons button {
+      padding: 15px 30px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .shop-now {
+      background-color: #224893;
+      color: white;
+    }
+    .view-products {
+      background-color: #f3f3f3;
+      color: #224893;
+    }
+    .hero .image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      min-width: 200px;
+    }
+    .hero img {
+      max-width: 50%;
+      height: auto;
+    }
+
+     @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+      }
+     }
+     @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .hero .buttons button {
+        font-size: 14px;
+        padding: 10px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="text">
+      <span
+        style="display: inline-block; padding: 10px 20px; background-color: #E0F0FF; color: #224893; border-radius: 20px; position: relative;">
+        New Arrivals
+        <img
+          src="data:image/svg+xml,%3csvg%20width='21'%20height='21'%20viewBox='0%200%2021%2021'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M2.25181%2010.9107C2.74821%208.42435%202.60407%206.05745%202.56648%203.55937C2.55907%203.07151%202.15845%202.68332%201.67203%202.69008C1.18532%202.69685%200.796642%203.09927%200.803759%203.58714C0.839468%205.95591%200.994289%208.2047%200.523269%2010.5664C0.427889%2011.0441%200.73812%2011.5098%201.21514%2011.6034C1.692%2011.7%202.15672%2011.3884%202.25181%2010.9107Z'%20fill='%23224893'/%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M7.60162%2015.4506C11.54%2011.5184%2015.1939%206.5224%2017.6816%201.53078C17.8985%201.09479%2017.7213%200.564403%2017.2859%200.348345C16.8505%200.132287%2016.3207%200.308604%2016.1038%200.744602C13.6982%205.57085%2010.1645%2010.4028%206.3561%2014.2028C6.01193%2014.5474%206.01159%2015.1061%206.35525%2015.4498C6.69891%2015.7934%207.25745%2015.7952%207.60162%2015.4506Z'%20fill='%23224893'/%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M8.82204%2019.5022C12.6028%2019.9559%2016.425%2018.7286%2019.7721%2017.084C20.2087%2016.8677%2020.3889%2016.3392%2020.1747%2015.9046C19.9602%2015.467%2019.4314%2015.2874%2018.9947%2015.5008C15.9464%2016.9999%2012.4756%2018.1647%209.03213%2017.752C8.54903%2017.6939%208.10992%2018.0397%208.05208%2018.5216C7.99394%2019.0035%208.33923%2019.4441%208.82204%2019.5022Z'%20fill='%23224893'/%3e%3c/svg%3e"
+          alt="New Arrival Icon" style="position: absolute; top: -10px; right: -20px; width: 21px; height: 21px;">
+      </span>
+      <h1>Smart <span style="color: #224893;">Gadgets</span>, <br>Smarter Living</h1>
+      <p>Experience the latest in tech with unbeatable quality and performance. Exclusive deals available for a limited
+        time.</p>
+      <div class="buttons">
+        <button class="shop-now">Shop Now</button>
+        <button class="view-products">View All Products</button>
+      </div>
+    </div>
+    <div class="image">
+      <img src="../images/hero-lappy.png" alt="Laptop showcasing new arrivals">
     </div>
   </section>
 </body>

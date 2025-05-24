@@ -1,208 +1,96 @@
-<!-- <template>
-  <section class="services">
-    <h2>Our Services</h2>
-    <div class="services-list">
-      <div class="service-item" v-for="(service, index) in services" :key="index">
-        <img :src="service.image" :alt="service.title" />
-        <h3>{{ service.title }}</h3>
-        <p>{{ service.description }}</p>
-      </div>
-    </div>
-  </section>
-</template>
-
-<script setup>
-import deliveryImg from '../assets/images/delivery.png';
-import secureImg from '../assets/images/secure.png';
-import returnImg from '../assets/images/return.png';
-import flexibleImg from '../assets/images/flexible.png';
-import supportImg from '../assets/images/support.png';
-
-const services = [
-  {
-    title: "Free Delivery",
-    description: "Free shipping on all orders over ₦5,000,000",
-    image: deliveryImg
-  },
-  {
-    title: "Secure Payment",
-    description: "100% secure payment systems",
-    image: secureImg
-  },
-  {
-    title: "30-Day Returns",
-    description: "Easy returns within 30 days",
-    image: returnImg
-  },
-  {
-    title: "Flexible Payment",
-    description: "Multiple payment options available",
-    image: flexibleImg
-  },
-  {
-    title: "24/7 Support",
-    description: "Dedicated support anytime",
-    image: supportImg
-  }
-];
-</script>
-
-
-<style scoped>
-.services {
-  padding: 2rem;
-  text-align: center;
-}
-
-.services h2 {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-}
-
-.services-list {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.service-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 250px;
-  margin: 0 auto;
-}
-
-.service-item img {
-  width: 100px;
-  height: 100px;
-  object-fit: contain;
-  margin-bottom: 1rem;
-}
-
-.service-item h3 {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-}
-
-.service-item p {
-  font-size: 0.9rem;
-  color: #666;
-  text-align: center;
-}
-
-/* Responsive Layout */
-@media (min-width: 768px) {
-  .services-list {
-    flex-direction: row;
-    justify-content: center;
-  }
-}
-</style> -->
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Our Services</title>
-  <style>
-    .services {
-      padding: 2rem;
-      text-align: center;
-      font-family: Arial, sans-serif;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+        }
 
-    .services h2 {
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-      color: #333;
-    }
+        .services-section {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #f9f9f9;
+        }
 
-    .services-list {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
-    }
+        .services-section h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
 
-    .service-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 200px;
-      padding: 1rem;
-    }
+        .services-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-    .service-item img {
-      width: 80px;
-      height: 80px;
-      object-fit: contain;
-      margin-bottom: 1rem;
-    }
+        .service-item {
+            flex: 1;
+            min-width: 180px;
+            max-width: 220px;
+            text-align: center;
+        }
 
-    .service-item h3 {
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
-      color: #222;
-    }
+        .service-item img {
+            width: 100px;
+            height: auto;
+            margin-bottom: 15px;
+        }
 
-    .service-item p {
-      font-size: 0.9rem;
-      color: #666;
-      text-align: center;
-      line-height: 1.4;
-    }
+        .service-item h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 0 0 10px;
+        }
 
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-      .services-list {
-        flex-direction: column;
-        align-items: center;
-      }
-      .service-item {
-        width: 100%;
-        max-width: 250px;
-      }
-    }
-  </style>
+        .service-item p {
+            font-size: 14px;
+            color: #555;
+            margin: 0;
+        }
+    </style>
 </head>
 <body>
-  <section class="services">
-    <h2>Our Services</h2>
-    <div class="services-list">
-      <div class="service-item">
-        <img src="https://cdn-icons-png.flaticon.com/512/2909/2909778.png" alt="Free Delivery" />
-        <h3>Free Delivery</h3>
-        <p>Free shipping on all orders over ₦5,000,000</p>
-      </div>
-      
-      <div class="service-item">
-        <img src="https://cdn-icons-png.flaticon.com/512/2452/2452059.png" alt="Secure Payment" />
-        <h3>Secure Payment</h3>
-        <p>100% secure payment systems</p>
-      </div>
-      
-      <div class="service-item">
-        <img src="https://cdn-icons-png.flaticon.com/512/2541/2541973.png" alt="30-Day Returns" />
-        <h3>30-Day Returns</h3>
-        <p>Easy returns within 30 days</p>
-      </div>
-      
-      <div class="service-item">
-        <img src="https://cdn-icons-png.flaticon.com/512/2489/2489713.png" alt="Flexible Payment" />
-        <h3>Flexible Payment</h3>
-        <p>Multiple payment options available</p>
-      </div>
-      
-      <div class="service-item">
-        <img src="https://cdn-icons-png.flaticon.com/512/2190/2190552.png" alt="24/7 Support" />
-        <h3>24/7 Support</h3>
-        <p>Dedicated support anytime</p>
-      </div>
-    </div>
-  </section>
+    <section class="services-section">
+        <h2>Our Services</h2>
+        <div class="services-container">
+            <div class="service-item">
+                <img src="../images/delivery.png" alt="Free Delivery">
+                <h3>Free Delivery</h3>
+                <p>Free shipping on all orders over ₦5,000,000</p>
+            </div>
+            <div class="service-item">
+                <img src="../images/secure.png" alt="Secure Payment">
+                <h3>Secure Payment</h3>
+                <p>100% secure payment systems</p>
+            </div>
+            <div class="service-item">
+                <img src="../images/return.png" alt="30-Day Returns">
+                <h3>30-Day Returns</h3>
+                <p>Easy returns within 30 days</p>
+            </div>
+            <div class="service-item">
+                <img src="../images/flexible.png" alt="Flexible Payment">
+                <h3>Flexible Payment</h3>
+                <p>Multiple payment options available</p>
+            </div>
+            <div class="service-item">
+                <img src="../images/support.png" alt="24/7 Support">
+                <h3>24/7 Support</h3>
+                <p>Dedicated support anytime</p>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
+

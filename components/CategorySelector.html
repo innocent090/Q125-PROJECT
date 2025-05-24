@@ -1,19 +1,3 @@
-<!-- <template>
-  <div class="category-selector">
-    <button
-      v-for="category in categories"
-      :key="category"
-      @click="$emit('select', category)"
-    >
-      {{ category }}
-    </button>
-  </div>
-</template>
-
-<script setup>
-defineProps(['categories'])
-</script> -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,56 +5,50 @@ defineProps(['categories'])
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Category Selector</title>
   <style>
-    .category-selector {
-      display: flex;
-      gap: 0.5rem;
-    }
-
-    .category-selector button {
-      background-color: #224893;
-      color: white;
-      border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 1rem;
-    }
-
-    .category-selector button:hover {
-      background-color: #1a3770;
-    }
+    .category-tabs {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .category-tab {
+            padding: 8px 15px;
+            cursor: pointer;
+            font-size: 14px;
+            color: #777;
+            border-radius: 4px;
+            background-color: #f5f5f5;
+        }
+        
+        .category-tab.active {
+            background-color: #224893;
+            color: white;
+        }
+         @media (max-width: 768px) {
+          .category-tabs {
+                width: 100%;
+                overflow-x: auto;
+                padding-bottom: 10px;
+            }
+         }
   </style>
 </head>
 <body>
-  <div id="app" class="category-selector">
-    <!-- Buttons will be dynamically generated here -->
-  </div>
-
-  <script>
-    // Example categories array
-    const categories = ['Electronics', 'Clothing', 'Home Appliances'];
-
-    // Function to render category buttons
-    function renderCategorySelector(categories) {
-      const app = document.getElementById('app');
-      app.innerHTML = ''; // Clear any existing content
-
-      categories.forEach(category => {
-        const button = document.createElement('button');
-        button.textContent = category;
-        button.addEventListener('click', () => selectCategory(category));
-        app.appendChild(button);
-      });
-    }
-
-    // Function to handle category selection
-    function selectCategory(category) {
-      alert(`Category selected: ${category}`);
-      // Add logic here to handle category selection
-    }
-
-    // Render the category selector
-    renderCategorySelector(categories);
-  </script>
+  <div class="category-tabs">
+                <div class="category-tab active">New Arrival</div>
+                <div class="category-tab">Best Seller</div>
+                <div class="category-tab">Top Rated</div>
+            </div>
+            <script>
+              // Tab switching functionality
+        const tabs = document.querySelectorAll('.category-tab');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                // Here you would add code to filter products based on the selected tab
+            });
+        });
+            </script>
 </body>
 </html>
+
