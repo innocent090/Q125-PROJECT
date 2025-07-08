@@ -1,111 +1,21 @@
-<!-- 
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cart Card</title>
-  <style>
-    .cart-card {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      padding: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      margin-bottom: 1rem;
-    }
-
-    .cart-card img {
-      width: 100px;
-      height: 100px;
-      object-fit: cover;
-      border-radius: 8px;
-    }
-
-    .cart-card div {
-      flex: 1;
-    }
-
-    .cart-card h4 {
-      margin: 0;
-      font-size: 1.2rem;
-    }
-
-    .cart-card p {
-      margin: 0.5rem 0;
-    }
-
-    .cart-card button {
-      background-color: #f44336;
-      color: white;
-      border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-
-    .cart-card button:hover {
-      background-color: #d32f2f;
-    }
-  </style>
-</head>
-<body>
-  <div id="app">
-    <!-- Cart item template -
-  </div>
-
-  <script>
-    // Example item data
-    const item = {
-      id: 1,
-      image: 'https://via.placeholder.com/100',
-      name: 'Sample Item',
-      quantity: 2,
-      price: 20
-    };
-
-    // Function to render the cart card
-    function renderCartCard(item) {
-      const app = document.getElementById('app');
-      app.innerHTML = `
-        <div class="cart-card">
-          <img src="${item.image}" alt="${item.name}" />
-          <div>
-            <h4>${item.name}</h4>
-            <p>Quantity: ${item.quantity}</p>
-            <p>Total: $${item.price * item.quantity}</p>
-            <button onclick="removeItem(${item.id})">Remove</button>
-          </div>
-        </div>
-      `;
-    }
-
-    // Function to handle the remove action
-    function removeItem(id) {
-      alert(`Item with ID ${id} removed!`);
-      // Add logic to remove the item from your data source
-    }
-
-    // Render the cart card
-    renderCartCard(item);
-  </script>
-</body>
-</html> -->
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Enhanced Laptop Store</title>
+  <title>accessories page</title>
   <link
     href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Open+Sans:wght@400;600&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
     body {
-      margin: 0;
       font-family: 'Roboto', Arial, sans-serif;
       overflow-x: hidden;
       background-color: #f5f7fa;
@@ -974,6 +884,10 @@
     .sort-indicator i {
       font-size: 16px;
     }
+
+    .wishlist-icon i.fa-heart {
+      color: #ff4081 !important;
+    }
   </style>
 </head>
 <body>
@@ -988,22 +902,23 @@
       <button>Search</button>
     </div>
     <div class="menu">
-      <a href="#"><i class="fa fa-heart-o"></i> Wishlist</a>
-      <a href="#"><i class="fa fa-shopping-cart"></i> Cart</a>
-      <a href="#"><i class="fa fa-credit-card-alt"></i> Payment Method</a>
+      <a href="../pages/Wishlist.html"><i class="fa fa-heart-o"></i> Wishlist</a>
+      <a href="../pages/login.html">Login || Register</a>
+      <a href="../pages/Cart.html"><i class="fa fa-shopping-cart"></i> Cart</a>
+      <a href="../pages/Paymentmethod.html"><i class="fa fa-credit-card-alt"></i> Payment Method</a>
     </div>
   </header>
   <nav>
-    <a href="#">Home /</a>
-    <a href="#">Accessories</a>
+    <a href="../index.html">Home /</a>
+    <a href="../pages/Accessories.html">accessories</a>
     <!-- <a href="#">Printers</a>
     <a href="#">Monitors</a>
     <a href="#">Phones</a>
     <a href="#">Accessories</a> -->
   </nav>
-  <section class="hero" style="background-image: url('../images/Bg1.png');">
+  <section class="hero" style="background-image: url('https://vue-ecommerce-theta.vercel.app/assets/BgAccessory-DzQ7i60o.png');">
     <div class="hero-content">
-      <h1>Shop The best Desktop</h1>
+      <h1>Shop The best accessories</h1>
       <p>Discover premium tech products with flexible payment options.</p>
     </div>
   </section>
@@ -1013,10 +928,10 @@
       <div class="controls-container">
           <div class="category-tabs">
               <button class="category-tab active">All</button>
-              <button class="category-tab">Business</button>
-              <button class="category-tab">Everyday use</button>
-              <button class="category-tab">School</button>
               <button class="category-tab">Gaming</button>
+              <button class="category-tab">Productivity</button>
+              <button class="category-tab">Travel</button>
+              <!-- <button class="category-tab">Gaming</button> -->
           </div>
           <div class="sort-options">
               <div class="sort-by">
@@ -1105,7 +1020,7 @@
   <footer class="footer">
       <div class="footer_details">
         <div class="footer_logo">
-          <h3>TechFlex</h3>
+          <h3>LOGO</h3>
           <p>Premium tech products with flexible payment options and exceptional service.</p>
           <div class="socials">
             <img src="../images/facebook.png" alt="Facebook" />
@@ -1114,13 +1029,13 @@
           </div>
         </div>
         <ul class="right">
-          <li><a href="#">Laptops</a></li>
-          <li><a href="#">Desktops</a></li>
-          <li><a href="#">Printers</a></li>
-          <li><a href="#">Monitors</a></li>
-          <li><a href="#">Phones</a></li>
-          <li><a href="#">Accessories</a></li>
-        </ul>
+        <li><a href="../pages/Laptops.html">Laptops</a></li>
+        <li><a href="../pages/Tablets.html">Tablets</a></li>
+        <li><a href="../pages/Printers.html">Printers</a></li>
+        <li><a href="../pages/Monitors.html">Monitors</a></li>
+        <li><a href="../pages/Phone.html">Phones</a></li>
+        <li><a href="../pages/Accessories.html">Accessories</a></li>
+      </ul>
       </div>
       <div class="footer_bottom">
         <div class="footer_line"></div>
@@ -1136,225 +1051,206 @@
     // Products Data with added dates for sorting
     const productsData = [
         {
-            "id": 21,
-            "name": "HP Laptop Model 671",
-            "category": "laptops",
-            "brand": "HP",
-            "use": "Business",
-            "old_price": 732.63,
-            "new_price": 670.14,
-            "rating": 3.9,
-            "date_added": "2023-10-15"
-        },
-        {
-            "id": 22,
-            "name": "Lenovo Laptop Model 323",
-            "category": "laptops",
-            "brand": "Lenovo",
-            "use": "Everyday use",
-            "old_price": 341.42,
-            "new_price": 320.31,
-            "rating": 3.9,
-            "date_added": "2023-11-20"
-        },
-        {
-            "id": 23,
-            "name": "HP Laptop Model 775",
-            "category": "laptops",
-            "brand": "HP",
-            "use": "School",
-            "old_price": 594.53,
-            "new_price": 555.19,
-            "rating": 3.2,
-            "date_added": "2023-09-05"
-        },
-        {
-            "id": 24,
-            "name": "Asus Laptop Model 379",
-            "category": "laptops",
-            "brand": "Asus",
-            "use": "School",
-            "old_price": 1020.02,
-            "new_price": 928.01,
-            "rating": 4.3,
-            "date_added": "2023-12-10"
-        },
-        {
-            "id": 25,
-            "name": "Asus Laptop Model 560",
-            "category": "laptops",
-            "brand": "Asus",
-            "use": "Everyday use",
-            "old_price": 541.73,
-            "new_price": 461.3,
-            "rating": 4.7,
-            "date_added": "2023-08-22"
-        },
-        {
-            "id": 26,
-            "name": "Apple Laptop Model 442",
-            "category": "laptops",
-            "brand": "Apple",
-            "use": "Business",
-            "old_price": 1332.46,
-            "new_price": 1022.26,
-            "rating": 3.8,
-            "date_added": "2023-07-30"
-        },
-        {
-            "id": 27,
-            "name": "Dell Laptop Model 866",
-            "category": "laptops",
-            "brand": "Dell",
-            "use": "Everyday use",
-            "old_price": 1875.2,
-            "new_price": 1757.91,
-            "rating": 4.0,
-            "date_added": "2023-11-15"
-        },
-        {
-            "id": 28,
-            "name": "Apple Laptop Model 803",
-            "category": "laptops",
-            "brand": "Apple",
-            "use": "Business",
-            "old_price": 1760.39,
-            "new_price": 1478.72,
-            "rating": 4.1,
-            "date_added": "2023-10-01"
-        },
-        {
-            "id": 29,
-            "name": "Apple Laptop Model 946",
-            "category": "laptops",
-            "brand": "Apple",
-            "use": "Gaming",
-            "old_price": 1073.19,
-            "new_price": 994.41,
-            "rating": 3.4,
-            "date_added": "2023-09-18"
-        },
-        {
-            "id": 30,
-            "name": "HP Laptop Model 135",
-            "category": "laptops",
-            "brand": "HP",
-            "use": "Gaming",
-            "old_price": 1531.67,
-            "new_price": 1354.94,
-            "rating": 4.8,
-            "date_added": "2023-12-05"
-        },
-        {
-            "id": 31,
-            "name": "Dell Laptop Model 677",
-            "category": "laptops",
-            "brand": "Dell",
-            "use": "Gaming",
-            "old_price": 1218.26,
-            "new_price": 1074.33,
-            "rating": 3.1,
-            "date_added": "2023-08-10"
-        },
-        {
-            "id": 32,
-            "name": "Apple Laptop Model 423",
-            "category": "laptops",
-            "brand": "Apple",
-            "use": "School",
-            "old_price": 829.7,
-            "new_price": 762.51,
-            "rating": 3.4,
-            "date_added": "2023-11-25"
-        },
-        {
-            "id": 33,
-            "name": "HP Laptop Model 455",
-            "category": "laptops",
-            "brand": "HP",
-            "use": "Everyday use",
-            "old_price": 515.78,
-            "new_price": 393.89,
-            "rating": 3.7,
-            "date_added": "2023-10-12"
-        },
-        {
-            "id": 34,
-            "name": "Dell Laptop Model 147",
-            "category": "laptops",
-            "brand": "Dell",
-            "use": "Everyday use",
-            "old_price": 635.61,
-            "new_price": 564.83,
-            "rating": 3.5,
-            "date_added": "2023-11-05"
-        },
-        {
-            "id": 35,
-            "name": "Apple Laptop Model 743",
-            "category": "laptops",
-            "brand": "Apple",
-            "use": "Gaming",
-            "old_price": 977.44,
-            "new_price": 831.22,
-            "rating": 3.1,
-            "date_added": "2023-09-25"
-        },
-        {
-            "id": 36,
-            "name": "Dell Laptop Model 850",
-            "category": "laptops",
-            "brand": "Dell",
-            "use": "Everyday use",
-            "old_price": 1738.85,
-            "new_price": 1309.44,
-            "rating": 3.2,
-            "date_added": "2023-10-30"
-        },
-        {
-            "id": 37,
-            "name": "Apple Laptop Model 697",
-            "category": "laptops",
-            "brand": "Apple",
-            "use": "School",
-            "old_price": 318.69,
-            "new_price": 287.98,
-            "rating": 5.0,
-            "date_added": "2023-12-01"
-        },
-        {
-            "id": 38,
-            "name": "Apple Laptop Model 845",
-            "category": "laptops",
-            "brand": "Apple",
-            "use": "School",
-            "old_price": 294.3,
-            "new_price": 229.42,
-            "rating": 3.5,
-            "date_added": "2023-11-10"
-        },
-        {
-            "id": 39,
-            "name": "Lenovo Laptop Model 705",
-            "category": "laptops",
-            "brand": "Lenovo",
-            "use": "Everyday use",
-            "old_price": 1230.37,
-            "new_price": 958.25,
-            "rating": 4.2,
-            "date_added": "2023-10-05"
-        },
-        {
-            "id": 40,
-            "name": "Apple Laptop Model 552",
-            "category": "laptops",
-            "brand": "Apple",
-            "use": "Gaming",
-            "old_price": 832.86,
-            "new_price": 730.27,
-            "rating": 4.1,
-            "date_added": "2023-09-15"
-        }
+    "id": 61,
+    "name": "Razer Accessorie Model 360",
+    "category": "accessories",
+    "brand": "Razer",
+    "use": "Gaming",
+    "old_price": 861.21,
+    "new_price": 631.32,
+    "rating": 4.5
+  },
+  {
+    "id": 62,
+    "name": "Razer Accessorie Model 940",
+    "category": "accessories",
+    "brand": "Razer",
+    "use": "Gaming",
+    "old_price": 1435.3,
+    "new_price": 1360.18,
+    "rating": 3.5
+  },
+  {
+    "id": 63,
+    "name": "Corsair Accessorie Model 510",
+    "category": "accessories",
+    "brand": "Corsair",
+    "use": "Gaming",
+    "old_price": 957.69,
+    "new_price": 681.3,
+    "rating": 4.6
+  },
+  {
+    "id": 64,
+    "name": "Logitech Accessorie Model 267",
+    "category": "accessories",
+    "brand": "Logitech",
+    "use": "Gaming",
+    "old_price": 253.85,
+    "new_price": 185.05,
+    "rating": 4.9
+  },
+  {
+    "id": 65,
+    "name": "Razer Accessorie Model 365",
+    "category": "accessories",
+    "brand": "Razer",
+    "use": "Gaming",
+    "old_price": 1054.26,
+    "new_price": 782.8,
+    "rating": 3.6
+  },
+  {
+    "id": 66,
+    "name": "Logitech Accessorie Model 115",
+    "category": "accessories",
+    "brand": "Logitech",
+    "use": "Productivity",
+    "old_price": 639.22,
+    "new_price": 458.77,
+    "rating": 4.4
+  },
+  {
+    "id": 67,
+    "name": "Logitech Accessorie Model 394",
+    "category": "accessories",
+    "brand": "Logitech",
+    "use": "Productivity",
+    "old_price": 1095.01,
+    "new_price": 912.03,
+    "rating": 4.4
+  },
+  {
+    "id": 68,
+    "name": "Logitech Accessorie Model 988",
+    "category": "accessories",
+    "brand": "Logitech",
+    "use": "Travel",
+    "old_price": 891.01,
+    "new_price": 761.23,
+    "rating": 3.6
+  },
+  {
+    "id": 69,
+    "name": "Corsair Accessorie Model 650",
+    "category": "accessories",
+    "brand": "Corsair",
+    "use": "Gaming",
+    "old_price": 1564.1,
+    "new_price": 1215.06,
+    "rating": 3.9
+  },
+  {
+    "id": 70,
+    "name": "Logitech Accessorie Model 327",
+    "category": "accessories",
+    "brand": "Logitech",
+    "use": "Gaming",
+    "old_price": 1141.78,
+    "new_price": 1001.07,
+    "rating": 3.3
+  },
+  {
+    "id": 71,
+    "name": "Corsair Accessorie Model 696",
+    "category": "accessories",
+    "brand": "Corsair",
+    "use": "Gaming",
+    "old_price": 787.52,
+    "new_price": 606.56,
+    "rating": 3.1
+  },
+  {
+    "id": 72,
+    "name": "Logitech Accessorie Model 215",
+    "category": "accessories",
+    "brand": "Logitech",
+    "use": "Travel",
+    "old_price": 1639.17,
+    "new_price": 1481.09,
+    "rating": 3.1
+  },
+  {
+    "id": 73,
+    "name": "Razer Accessorie Model 204",
+    "category": "accessories",
+    "brand": "Razer",
+    "use": "Gaming",
+    "old_price": 939.21,
+    "new_price": 801.14,
+    "rating": 3.7
+  },
+  {
+    "id": 74,
+    "name": "Logitech Accessorie Model 325",
+    "category": "accessories",
+    "brand": "Logitech",
+    "use": "Productivity",
+    "old_price": 397.1,
+    "new_price": 297.18,
+    "rating": 3.5
+  },
+  {
+    "id": 75,
+    "name": "Anker Accessorie Model 656",
+    "category": "accessories",
+    "brand": "Anker",
+    "use": "Productivity",
+    "old_price": 1985.92,
+    "new_price": 1427.68,
+    "rating": 4.0
+  },
+  {
+    "id": 76,
+    "name": "Razer Accessorie Model 301",
+    "category": "accessories",
+    "brand": "Razer",
+    "use": "Productivity",
+    "old_price": 931.8,
+    "new_price": 858.28,
+    "rating": 3.0
+  },
+  {
+    "id": 77,
+    "name": "Razer Accessorie Model 686",
+    "category": "accessories",
+    "brand": "Razer",
+    "use": "Gaming",
+    "old_price": 1432.44,
+    "new_price": 1135.47,
+    "rating": 3.7
+  },
+  {
+    "id": 78,
+    "name": "Anker Accessorie Model 706",
+    "category": "accessories",
+    "brand": "Anker",
+    "use": "Gaming",
+    "old_price": 1511.59,
+    "new_price": 1358.74,
+    "rating": 4.0
+  },
+  {
+    "id": 79,
+    "name": "Corsair Accessorie Model 968",
+    "category": "accessories",
+    "brand": "Corsair",
+    "use": "Productivity",
+    "old_price": 592.66,
+    "new_price": 461.8,
+    "rating": 3.7
+  },
+  {
+    "id": 80,
+    "name": "Corsair Accessorie Model 489",
+    "category": "accessories",
+    "brand": "Corsair",
+    "use": "Gaming",
+    "old_price": 606.61,
+    "new_price": 462.7,
+    "rating": 4.6
+  },
+  
     ];
 
     // Initialize variables
@@ -1769,6 +1665,358 @@
             renderPagination();
         }
     }
+
+
+     <!-- Add this script at the bottom of your existing JavaScript -->
+// Wishlist functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize wishlist count
+    updateWishlistCount();
+    
+    // Function to update wishlist count in header
+    function updateWishlistCount() {
+        const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+        const wishlistLink = document.querySelector('.menu a:nth-child(1)');
+        if (wishlistLink) {
+            wishlistLink.innerHTML = `<i class="fa fa-heart-o"></i> Wishlist (${wishlist.length})`;
+        }
+    }
+    
+    // Function to toggle product in wishlist
+    function toggleWishlist(productId, iconElement) {
+        const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+        const product = productsData.find(p => p.id == productId);
+        
+        if (!product) return;
+        
+        const existingIndex = wishlist.findIndex(item => item.id == productId);
+        
+        if (existingIndex === -1) {
+            // Add to wishlist
+            wishlist.push({
+                id: product.id,
+                name: product.name,
+                new_price: product.new_price,
+                old_price: product.old_price,
+                category: product.category,
+                brand: product.brand,
+                use: product.use,
+                rating: product.rating,
+                image: "https://vue-ecommerce-theta.vercel.app/images/product_img.png" // Using your default product image
+            });
+            iconElement.classList.remove('fa-heart-o');
+            iconElement.classList.add('fa-heart');
+            iconElement.style.color = '#ff4081';
+            
+            // Show success notification
+            showNotification(`${product.name} added to wishlist!`);
+        } else {
+            // Remove from wishlist
+            wishlist.splice(existingIndex, 1);
+            iconElement.classList.remove('fa-heart');
+            iconElement.classList.add('fa-heart-o');
+            iconElement.style.color = 'white';
+            
+            // Show removal notification
+            showNotification(`${product.name} removed from wishlist`);
+        }
+        
+        localStorage.setItem('wishlist', JSON.stringify(wishlist));
+        updateWishlistCount();
+    }
+    
+    // Function to show notification
+    function showNotification(message) {
+        // Remove existing notification if any
+        const existingNotif = document.querySelector('.wishlist-notification');
+        if (existingNotif) existingNotif.remove();
+        
+        const notification = document.createElement('div');
+        notification.className = 'wishlist-notification';
+        notification.textContent = message;
+        notification.style.cssText = `
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #224893;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 1000;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        `;
+        
+        document.body.appendChild(notification);
+        
+        // Animate in
+        setTimeout(() => {
+            notification.style.opacity = '1';
+            notification.style.transform = 'translateY(0)';
+        }, 10);
+        
+        // Animate out after 3 seconds
+        setTimeout(() => {
+            notification.style.opacity = '0';
+            notification.style.transform = 'translateY(20px)';
+            setTimeout(() => notification.remove(), 300);
+        }, 3000);
+    }
+    
+    // Function to initialize wishlist icons on product cards
+    function initializeWishlistIcons() {
+        const wishlistIcons = document.querySelectorAll('.wishlist-icon i');
+        const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+        
+        wishlistIcons.forEach(icon => {
+            const productCard = icon.closest('.product-card');
+            if (!productCard) return;
+            
+            const wishlistIconContainer = productCard.querySelector('.wishlist-icon');
+            const productId = wishlistIconContainer.dataset.productId;
+            if (!productId) return;
+            
+            if (wishlist.some(item => item.id == productId)) {
+                icon.classList.remove('fa-heart-o');
+                icon.classList.add('fa-heart');
+                icon.style.color = '#ff4081';
+            }
+            
+            // Add click event
+            icon.addEventListener('click', function(e) {
+                e.preventDefault();
+                toggleWishlist(productId, this);
+            });
+        });
+    }
+    
+    // Modify renderProducts function to add data attributes
+    const originalRenderProducts = renderProducts;
+    renderProducts = function() {
+        originalRenderProducts.call(this);
+        
+        // Add product IDs to wishlist icons
+        document.querySelectorAll('.wishlist-icon').forEach((icon, index) => {
+            const startIndex = (currentPage - 1) * productsPerPage;
+            const product = filteredProducts[startIndex + index];
+            if (product) {
+                icon.dataset.productId = product.id;
+            }
+        });
+        
+        // Initialize wishlist icons
+        initializeWishlistIcons();
+    };
+    
+    // Re-render products to apply changes
+    renderProducts();
+});
+
+// ========== CART MANAGEMENT SYSTEM ==========
+// This code should be added to all product pages
+
+// Initialize cart functionality on page load
+document.addEventListener('DOMContentLoaded', function() {
+  // Initialize cart counter
+  updateCartCounter();
+  
+  // Add event listeners to all "Add to Cart" buttons
+  initAddToCartButtons();
+  
+  // Update wishlist icon states
+  initWishlistIcons();
+});
+
+// Cart functions
+function getCart() {
+  return JSON.parse(localStorage.getItem('cart')) || [];
+}
+
+function saveCart(cart) {
+  localStorage.setItem('cart', JSON.stringify(cart));
+  updateCartCounter();
+}
+
+function addToCart(product) {
+  const cart = getCart();
+  
+  // Check if product is already in cart
+  const existingItem = cart.find(item => item.id === product.id);
+  
+  if (existingItem) {
+    existingItem.quantity += 1;
+  } else {
+    cart.push({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image: product.image,
+      quantity: 1
+    });
+  }
+  
+  saveCart(cart);
+  showNotification(`${product.name} added to cart!`);
+}
+
+function updateCartCounter() {
+  const cart = getCart();
+  const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+  
+  // Update cart counter in header
+  const cartCounter = document.querySelector('.menu a[href*="Cart"] .cart-count');
+  if (cartCounter) {
+    cartCounter.textContent = `(${totalItems})`;
+  }
+  
+  // Create counter if it doesn't exist
+  const cartLink = document.querySelector('.menu a[href*="Cart"]');
+  if (cartLink && !cartCounter) {
+    const countSpan = document.createElement('span');
+    countSpan.className = 'cart-count';
+    countSpan.textContent = `(${totalItems})`;
+    cartLink.appendChild(countSpan);
+  }
+}
+
+function showNotification(message) {
+  // Create notification if it doesn't exist
+  let notification = document.getElementById('cart-notification');
+  if (!notification) {
+    notification = document.createElement('div');
+    notification.id = 'cart-notification';
+    notification.className = 'notification';
+    document.body.appendChild(notification);
+    
+    // Add basic notification styling
+    const style = document.createElement('style');
+    style.textContent = `
+      .notification {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #224893;
+        color: white;
+        padding: 15px 25px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        z-index: 1000;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.3s ease;
+      }
+      .notification.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    `;
+    document.head.appendChild(style);
+  }
+  
+  notification.textContent = message;
+  notification.classList.add('show');
+  
+  setTimeout(() => {
+    notification.classList.remove('show');
+  }, 3000);
+}
+
+// Initialize Add to Cart buttons
+function initAddToCartButtons() {
+  document.querySelectorAll('.add-to-cart').forEach(button => {
+    button.addEventListener('click', function() {
+      // Get product details from the card
+      const card = this.closest('.product-card');
+      if (!card) return;
+      
+      const productId = this.dataset.id || card.querySelector('.discount-tag')?.dataset.id;
+      const productName = card.querySelector('.product-name')?.textContent || "Product";
+      const priceNew = card.querySelector('.price-new')?.textContent;
+      const productImage = card.querySelector('.product-image')?.src || "https://vue-ecommerce-theta.vercel.app/images/product_img.png";
+      
+      // Extract numeric price
+      let productPrice = 0;
+      if (priceNew) {
+        const priceMatch = priceNew.match(/[\d,]+\.\d{2}/);
+        if (priceMatch) {
+          productPrice = parseFloat(priceMatch[0].replace(/,/g, ''));
+        }
+      }
+      
+      addToCart({
+        id: productId || Date.now(), // Use timestamp as fallback ID
+        name: productName,
+        price: productPrice,
+        image: productImage
+      });
+    });
+  });
+}
+
+// Wishlist functionality
+function initWishlistIcons() {
+  const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+  
+  document.querySelectorAll('.wishlist-icon i').forEach(icon => {
+    const card = icon.closest('.product-card');
+    if (!card) return;
+    
+    const productId = card.querySelector('.add-to-cart')?.dataset.id || 
+                     card.querySelector('.discount-tag')?.dataset.id;
+    
+    if (wishlist.includes(productId)) {
+      icon.classList.remove('fa-heart-o');
+      icon.classList.add('fa-heart');
+    }
+    
+    icon.addEventListener('click', function() {
+      this.classList.toggle('fa-heart-o');
+      this.classList.toggle('fa-heart');
+      
+      const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+      const index = wishlist.indexOf(productId);
+      
+      if (this.classList.contains('fa-heart')) {
+        // Add to wishlist
+        if (index === -1) {
+          wishlist.push(productId);
+          showNotification('Added to wishlist!');
+        }
+      } else {
+        // Remove from wishlist
+        if (index !== -1) {
+          wishlist.splice(index, 1);
+          showNotification('Removed from wishlist');
+        }
+      }
+      
+      localStorage.setItem('wishlist', JSON.stringify(wishlist));
+      
+      // Update wishlist counter
+      const wishlistLink = document.querySelector('.menu a[href*="Wishlist"]');
+      if (wishlistLink) {
+        const count = wishlist.length;
+        wishlistLink.innerHTML = `<i class="fa fa-heart-o"></i> Wishlist${count ? ` (${count})` : ''}`;
+      }
+    });
+  });
+}
+
+// Update wishlist counter
+function updateWishlistCounter() {
+  const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+  const wishlistLink = document.querySelector('.menu a[href*="Wishlist"]');
+  
+  if (wishlistLink) {
+    const count = wishlist.length;
+    wishlistLink.innerHTML = `<i class="fa fa-heart-o"></i> Wishlist${count ? ` (${count})` : ''}`;
+  }
+}
+
+// Initialize wishlist counter
+updateWishlistCounter();
   </script>
 </body>
 </html>

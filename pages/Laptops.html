@@ -1,114 +1,24 @@
-<!-- 
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cart Card</title>
-  <style>
-    .cart-card {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      padding: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      margin-bottom: 1rem;
-    }
-
-    .cart-card img {
-      width: 100px;
-      height: 100px;
-      object-fit: cover;
-      border-radius: 8px;
-    }
-
-    .cart-card div {
-      flex: 1;
-    }
-
-    .cart-card h4 {
-      margin: 0;
-      font-size: 1.2rem;
-    }
-
-    .cart-card p {
-      margin: 0.5rem 0;
-    }
-
-    .cart-card button {
-      background-color: #f44336;
-      color: white;
-      border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-
-    .cart-card button:hover {
-      background-color: #d32f2f;
-    }
-  </style>
-</head>
-<body>
-  <div id="app">
-    <!-- Cart item template -
-  </div>
-
-  <script>
-    // Example item data
-    const item = {
-      id: 1,
-      image: 'https://via.placeholder.com/100',
-      name: 'Sample Item',
-      quantity: 2,
-      price: 20
-    };
-
-    // Function to render the cart card
-    function renderCartCard(item) {
-      const app = document.getElementById('app');
-      app.innerHTML = `
-        <div class="cart-card">
-          <img src="${item.image}" alt="${item.name}" />
-          <div>
-            <h4>${item.name}</h4>
-            <p>Quantity: ${item.quantity}</p>
-            <p>Total: $${item.price * item.quantity}</p>
-            <button onclick="removeItem(${item.id})">Remove</button>
-          </div>
-        </div>
-      `;
-    }
-
-    // Function to handle the remove action
-    function removeItem(id) {
-      alert(`Item with ID ${id} removed!`);
-      // Add logic to remove the item from your data source
-    }
-
-    // Render the cart card
-    renderCartCard(item);
-  </script>
-</body>
-</html> -->
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Enhanced Laptop Store</title>
+  <title>Laptop page</title>
   <link
     href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Open+Sans:wght@400;600&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
     body {
-      margin: 0;
       font-family: 'Roboto', Arial, sans-serif;
       overflow-x: hidden;
-      background-color: #f5f7fa;
+      background-color: white
     }
 
      header {
@@ -988,14 +898,15 @@
       <button>Search</button>
     </div>
     <div class="menu">
-      <a href="#"><i class="fa fa-heart-o"></i> Wishlist</a>
-      <a href="#"><i class="fa fa-shopping-cart"></i> Cart</a>
-      <a href="#"><i class="fa fa-credit-card-alt"></i> Payment Method</a>
+      <a href="../pages/Wishlist.html"><i class="fa fa-heart-o"></i> Wishlist</a>
+      <a href="../pages/login.html">Login || Register</a>
+      <a href="../pages/Cart.html"><i class="fa fa-shopping-cart"></i> Cart</a>
+      <a href="../pages/Paymentmethod.html"><i class="fa fa-credit-card-alt"></i> Payment Method</a>
     </div>
   </header>
   <nav>
-    <a href="#">Home /</a>
-    <a href="#">Accessories</a>
+    <a href="../index.html">Home /</a>
+    <a href="../pages/Laptops.html">Laptops</a>
     <!-- <a href="#">Printers</a>
     <a href="#">Monitors</a>
     <a href="#">Phones</a>
@@ -1003,7 +914,7 @@
   </nav>
   <section class="hero" style="background-image: url('../images/Bg1.png');">
     <div class="hero-content">
-      <h1>Shop The best Desktop</h1>
+      <h1>Shop The best Laptops</h1>
       <p>Discover premium tech products with flexible payment options.</p>
     </div>
   </section>
@@ -1105,7 +1016,7 @@
   <footer class="footer">
       <div class="footer_details">
         <div class="footer_logo">
-          <h3>TechFlex</h3>
+          <h3>LOGO</h3>
           <p>Premium tech products with flexible payment options and exceptional service.</p>
           <div class="socials">
             <img src="../images/facebook.png" alt="Facebook" />
@@ -1113,14 +1024,14 @@
             <img src="../images/linkedin.png" alt="LinkedIn" />
           </div>
         </div>
-        <ul class="right">
-          <li><a href="#">Laptops</a></li>
-          <li><a href="#">Desktops</a></li>
-          <li><a href="#">Printers</a></li>
-          <li><a href="#">Monitors</a></li>
-          <li><a href="#">Phones</a></li>
-          <li><a href="#">Accessories</a></li>
-        </ul>
+       <ul class="right">
+        <li><a href="../pages/Laptops.html">Laptops</a></li>
+        <li><a href="../pages/Tablets.html">Tablets</a></li>
+        <li><a href="../pages/Printers.html">Printers</a></li>
+        <li><a href="../pages/Monitors.html">Monitors</a></li>
+        <li><a href="../pages/Phone.html">Phones</a></li>
+        <li><a href="../pages/Accessories.html">Accessories</a></li>
+      </ul>
       </div>
       <div class="footer_bottom">
         <div class="footer_line"></div>
@@ -1357,7 +1268,7 @@
         }
     ];
 
-    // Initialize variables
+    // Initialize variablesa
     let currentPage = 1;
     const productsPerPage = 12;
     let filteredProducts = [...productsData];
@@ -1769,6 +1680,357 @@
             renderPagination();
         }
     }
+
+    <!-- Add this script at the bottom of your existing JavaScript -->
+// Wishlist functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize wishlist count
+    updateWishlistCount();
+    
+    // Function to update wishlist count in header
+    function updateWishlistCount() {
+        const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+        const wishlistLink = document.querySelector('.menu a:nth-child(1)');
+        if (wishlistLink) {
+            wishlistLink.innerHTML = `<i class="fa fa-heart-o"></i> Wishlist (${wishlist.length})`;
+        }
+    }
+    
+    // Function to toggle product in wishlist
+    function toggleWishlist(productId, iconElement) {
+        const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+        const product = productsData.find(p => p.id == productId);
+        
+        if (!product) return;
+        
+        const existingIndex = wishlist.findIndex(item => item.id == productId);
+        
+        if (existingIndex === -1) {
+            // Add to wishlist
+            wishlist.push({
+                id: product.id,
+                name: product.name,
+                new_price: product.new_price,
+                old_price: product.old_price,
+                category: product.category,
+                brand: product.brand,
+                use: product.use,
+                rating: product.rating,
+                image: "https://vue-ecommerce-theta.vercel.app/images/product_img.png" // Using your default product image
+            });
+            iconElement.classList.remove('fa-heart-o');
+            iconElement.classList.add('fa-heart');
+            iconElement.style.color = '#ff4081';
+            
+            // Show success notification
+            showNotification(`${product.name} added to wishlist!`);
+        } else {
+            // Remove from wishlist
+            wishlist.splice(existingIndex, 1);
+            iconElement.classList.remove('fa-heart');
+            iconElement.classList.add('fa-heart-o');
+            iconElement.style.color = 'white';
+            
+            // Show removal notification
+            showNotification(`${product.name} removed from wishlist`);
+        }
+        
+        localStorage.setItem('wishlist', JSON.stringify(wishlist));
+        updateWishlistCount();
+    }
+    
+    // Function to show notification
+    function showNotification(message) {
+        // Remove existing notification if any
+        const existingNotif = document.querySelector('.wishlist-notification');
+        if (existingNotif) existingNotif.remove();
+        
+        const notification = document.createElement('div');
+        notification.className = 'wishlist-notification';
+        notification.textContent = message;
+        notification.style.cssText = `
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #224893;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 1000;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        `;
+        
+        document.body.appendChild(notification);
+        
+        // Animate in
+        setTimeout(() => {
+            notification.style.opacity = '1';
+            notification.style.transform = 'translateY(0)';
+        }, 10);
+        
+        // Animate out after 3 seconds
+        setTimeout(() => {
+            notification.style.opacity = '0';
+            notification.style.transform = 'translateY(20px)';
+            setTimeout(() => notification.remove(), 300);
+        }, 3000);
+    }
+    
+    // Function to initialize wishlist icons on product cards
+    function initializeWishlistIcons() {
+        const wishlistIcons = document.querySelectorAll('.wishlist-icon i');
+        const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+        
+        wishlistIcons.forEach(icon => {
+            const productCard = icon.closest('.product-card');
+            if (!productCard) return;
+            
+            const wishlistIconContainer = productCard.querySelector('.wishlist-icon');
+            const productId = wishlistIconContainer.dataset.productId;
+            if (!productId) return;
+            
+            if (wishlist.some(item => item.id == productId)) {
+                icon.classList.remove('fa-heart-o');
+                icon.classList.add('fa-heart');
+                icon.style.color = '#ff4081';
+            }
+            
+            // Add click event
+            icon.addEventListener('click', function(e) {
+                e.preventDefault();
+                toggleWishlist(productId, this);
+            });
+        });
+    }
+    
+    // Modify renderProducts function to add data attributes
+    const originalRenderProducts = renderProducts;
+    renderProducts = function() {
+        originalRenderProducts.call(this);
+        
+        // Add product IDs to wishlist icons
+        document.querySelectorAll('.wishlist-icon').forEach((icon, index) => {
+            const startIndex = (currentPage - 1) * productsPerPage;
+            const product = filteredProducts[startIndex + index];
+            if (product) {
+                icon.dataset.productId = product.id;
+            }
+        });
+        
+        // Initialize wishlist icons
+        initializeWishlistIcons();
+    };
+    
+    // Re-render products to apply changes
+    renderProducts();
+});
+
+// ========== CART MANAGEMENT SYSTEM ==========
+// This code should be added to all product pages
+
+// Initialize cart functionality on page load
+document.addEventListener('DOMContentLoaded', function() {
+  // Initialize cart counter
+  updateCartCounter();
+  
+  // Add event listeners to all "Add to Cart" buttons
+  initAddToCartButtons();
+  
+  // Update wishlist icon states
+  initWishlistIcons();
+});
+
+// Cart functions
+function getCart() {
+  return JSON.parse(localStorage.getItem('cart')) || [];
+}
+
+function saveCart(cart) {
+  localStorage.setItem('cart', JSON.stringify(cart));
+  updateCartCounter();
+}
+
+function addToCart(product) {
+  const cart = getCart();
+  
+  // Check if product is already in cart
+  const existingItem = cart.find(item => item.id === product.id);
+  
+  if (existingItem) {
+    existingItem.quantity += 1;
+  } else {
+    cart.push({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image: product.image,
+      quantity: 1
+    });
+  }
+  
+  saveCart(cart);
+  showNotification(`${product.name} added to cart!`);
+}
+
+function updateCartCounter() {
+  const cart = getCart();
+  const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+  
+  // Update cart counter in header
+  const cartCounter = document.querySelector('.menu a[href*="Cart"] .cart-count');
+  if (cartCounter) {
+    cartCounter.textContent = `(${totalItems})`;
+  }
+  
+  // Create counter if it doesn't exist
+  const cartLink = document.querySelector('.menu a[href*="Cart"]');
+  if (cartLink && !cartCounter) {
+    const countSpan = document.createElement('span');
+    countSpan.className = 'cart-count';
+    countSpan.textContent = `(${totalItems})`;
+    cartLink.appendChild(countSpan);
+  }
+}
+
+function showNotification(message) {
+  // Create notification if it doesn't exist
+  let notification = document.getElementById('cart-notification');
+  if (!notification) {
+    notification = document.createElement('div');
+    notification.id = 'cart-notification';
+    notification.className = 'notification';
+    document.body.appendChild(notification);
+    
+    // Add basic notification styling
+    const style = document.createElement('style');
+    style.textContent = `
+      .notification {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #224893;
+        color: white;
+        padding: 15px 25px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        z-index: 1000;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.3s ease;
+      }
+      .notification.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    `;
+    document.head.appendChild(style);
+  }
+  
+  notification.textContent = message;
+  notification.classList.add('show');
+  
+  setTimeout(() => {
+    notification.classList.remove('show');
+  }, 3000);
+}
+
+// Initialize Add to Cart buttons
+function initAddToCartButtons() {
+  document.querySelectorAll('.add-to-cart').forEach(button => {
+    button.addEventListener('click', function() {
+      // Get product details from the card
+      const card = this.closest('.product-card');
+      if (!card) return;
+      
+      const productId = this.dataset.id || card.querySelector('.discount-tag')?.dataset.id;
+      const productName = card.querySelector('.product-name')?.textContent || "Product";
+      const priceNew = card.querySelector('.price-new')?.textContent;
+      const productImage = card.querySelector('.product-image')?.src || "https://vue-ecommerce-theta.vercel.app/images/product_img.png";
+      
+      // Extract numeric price
+      let productPrice = 0;
+      if (priceNew) {
+        const priceMatch = priceNew.match(/[\d,]+\.\d{2}/);
+        if (priceMatch) {
+          productPrice = parseFloat(priceMatch[0].replace(/,/g, ''));
+        }
+      }
+      
+      addToCart({
+        id: productId || Date.now(), // Use timestamp as fallback ID
+        name: productName,
+        price: productPrice,
+        image: productImage
+      });
+    });
+  });
+}
+
+// Wishlist functionality
+function initWishlistIcons() {
+  const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+  
+  document.querySelectorAll('.wishlist-icon i').forEach(icon => {
+    const card = icon.closest('.product-card');
+    if (!card) return;
+    
+    const productId = card.querySelector('.add-to-cart')?.dataset.id || 
+                     card.querySelector('.discount-tag')?.dataset.id;
+    
+    if (wishlist.includes(productId)) {
+      icon.classList.remove('fa-heart-o');
+      icon.classList.add('fa-heart');
+    }
+    
+    icon.addEventListener('click', function() {
+      this.classList.toggle('fa-heart-o');
+      this.classList.toggle('fa-heart');
+      
+      const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+      const index = wishlist.indexOf(productId);
+      
+      if (this.classList.contains('fa-heart')) {
+        // Add to wishlist
+        if (index === -1) {
+          wishlist.push(productId);
+          showNotification('Added to wishlist!');
+        }
+      } else {
+        // Remove from wishlist
+        if (index !== -1) {
+          wishlist.splice(index, 1);
+          showNotification('Removed from wishlist');
+        }
+      }
+      
+      localStorage.setItem('wishlist', JSON.stringify(wishlist));
+      
+      // Update wishlist counter
+      const wishlistLink = document.querySelector('.menu a[href*="Wishlist"]');
+      if (wishlistLink) {
+        const count = wishlist.length;
+        wishlistLink.innerHTML = `<i class="fa fa-heart-o"></i> Wishlist${count ? ` (${count})` : ''}`;
+      }
+    });
+  });
+}
+
+// Update wishlist counter
+function updateWishlistCounter() {
+  const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+  const wishlistLink = document.querySelector('.menu a[href*="Wishlist"]');
+  
+  if (wishlistLink) {
+    const count = wishlist.length;
+    wishlistLink.innerHTML = `<i class="fa fa-heart-o"></i> Wishlist${count ? ` (${count})` : ''}`;
+  }
+}
+
+// Initialize wishlist counter
+updateWishlistCounter();
   </script>
 </body>
 </html>

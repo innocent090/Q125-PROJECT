@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+   <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Open+Sans:wght@400;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    :root {
+            --primary-color: #224893;
+            --secondary-color: #1a3a7a;
+            --error-color: #e53935;
+            --success-color: #4caf50;
+            --light-gray: #f5f7fa;
+            --dark-gray: #333;
+        }
+
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+    body {
+      font-family: 'Roboto', Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    .top-header {
+      width: 100%;
+      background-color: #224893;
+      padding: 5px 20px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      font-size: 14px;
+      color: #000;
+      font-family: 'Open Sans', Arial, sans-serif;
+    }
+
+    .top-header a {
+      text-decoration: none;
+      color: white;
+      margin-right: 50px;
+      line-height: 50px;
+    }
+
+    .top-header .top-header-new {
+      background-color: white;
+      color: #224893;
+      padding: 5px 10px;
+      border-radius: 15px;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    header {
+      background-color: white;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: black;
+      flex-wrap: wrap;
+      margin-left: 60px;
+    }
+    .logo1 {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .search-bar {
+      flex-grow: 1;
+      margin: 0 20px;
+      display: flex;
+      align-items: center;
+    }
+
+    .search-bar input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px 0 0 5px;
+      border: 1px solid #ccc;
+    }
+
+    .search-bar button {
+      padding: 10px 20px;
+      background-color: #224893;
+      height: 38px;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 0 5px 5px 0;
+    }
+
+    .menu {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+    }
+
+    .menu a {
+      color: black;
+      text-decoration: none;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+    }
+
+    .menu a i {
+      margin-right: 5px;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+      }
+      .search-bar {
+        margin: 10px 0;
+      }
+
+      .menu {
+        justify-content: center;
+      }
+    }
+    @media (max-width: 480px) {
+      .menu a {
+        font-size: 14px;
+      }
+    }
+
+
+    nav{
+      /* background-color: #f3f3f3; */
+      border-top: 1px #dddddd solid;
+      padding: 10px 20px 10px 80px;
+      display: flex;
+      flex-wrap: wrap;
+      line-height: 40px;
+    }
+
+    /* register style */
+    .main{
+      font-family: 'Open Sans', sans-serif;
+      background-color: var(--light-gray);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+        }
+        .auth-container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+            padding: 40px;
+        }
+        
+        .logo {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 28px;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--dark-gray);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark-gray);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+        
+        .password-container {
+            position: relative;
+        }
+        
+        .toggle-password {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #777;
+        }
+        
+        .error-message {
+            color: var(--error-color);
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+        }
+        
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        .auth-footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #777;
+        }
+        
+        .auth-footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .auth-footer a:hover {
+            text-decoration: underline;
+        }
+        
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px 25px;
+            border-radius: 5px;
+            color: white;
+            font-weight: 600;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            transform: translateY(-100px);
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .notification.success {
+            background-color: var(--success-color);
+        }
+        
+        .notification.error {
+            background-color: var(--error-color);
+        }
+        
+        .notification.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        @media (max-width: 576px) {
+            .auth-container {
+                padding: 30px 20px;
+            }
+        }
+
+        /* footer section */
+        .footer {
+  background-color: #111827;
+  color: white;
+  padding: 2rem 4rem;
+  padding-bottom: 0;
+  font-family: sans-serif;
+}
+
+.footer_details {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.footer_logo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.footer_line {
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.3);
+  width: 85%;
+  margin: 0.5rem 0;
+  z-index: 1;
+  position: absolute;
+
+}
+
+.footer_logo h3 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.footer_logo p {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+.socials {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.socials img {
+  width: 24px;
+  height: 24px;
+}
+
+.right {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  /* flex-direction: column; */
+}
+
+.right li a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.footer_bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-top: 1rem;
+  width: 60%;
+  z-index: 2;
+}
+
+.footer_bottom p {
+  margin: 0;
+  font-size: 0.8rem;
+  position: relative;    
+  margin-top: 58px;
+  margin-bottom: 28px;
+}
+
+
+.footer_bottom img {
+  position: relative;
+  z-index: 4;
+}
+
+
+/* Responsive */
+@media (min-width: 768px) {
+  .footer_details {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .right {
+    /* flex-direction: column; */
+    text-align: right;
+  }
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer_bottom img {
+    width: 60%;
+    position: absolute;
+    right: 24px;
+    bottom: 0;
+  }
+
+  .footer_bottom {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  .footer_details {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  .right {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+  }
+
+  .footer {
+    height: 50vh;
+    position: relative;
+    padding: 2rem 2rem;
+  }
+
+}
+  </style>
+ </head>
+ <body>
+  <div class="top-header">
+    <span class="top-header-new">New</span>
+    <a href="#">Sale ₦1200 Off Your First Order</a>
+  </div>
+  <header>
+    <div class="logo1">LOGO</div>
+    <div class="search-bar">
+      <input type="text" placeholder="Search for products, brands...">
+      <button>Search</button>
+    </div>
+    <div class="menu">
+       <a href="../pages/login.html">Login || Register</a>
+      <a href="../pages/Wishlist.html"><i class="fa fa-heart-o"></i> Wishlist</a>
+      <a href="../pages/Cart.html"><i class="fa fa-shopping-cart"></i> Cart</a>
+      <a href="../pages/Paymentmethod.html"><i class="fa fa-credit-card-alt"></i> Payment Method</a>
+    </div>
+  </header>
+  <nav>
+    <!-- <a href="#">Laptops</a>
+    <a href="#">Desktops</a> -->
+  </nav>
+  <div class="main">
+   <div class="auth-container">
+        <div class="logo">LOGO</div>
+        <h2>Create Your Account</h2>
+        
+        <form id="registerForm">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" class="form-control" required>
+                <div class="error-message" id="nameError">Please enter your full name</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" class="form-control" required>
+                <div class="error-message" id="emailError">Please enter a valid email address</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" class="form-control" required>
+                <div class="error-message" id="phoneError">Please enter a valid phone number</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password</label>
+                <div class="password-container">
+                    <input type="password" id="password" class="form-control" required>
+                    <i class="toggle-password fas fa-eye"></i>
+                </div>
+                <div class="error-message" id="passwordError">Password must be at least 6 characters</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <div class="password-container">
+                    <input type="password" id="confirmPassword" class="form-control" required>
+                    <i class="toggle-password fas fa-eye"></i>
+                </div>
+                <div class="error-message" id="confirmPasswordError">Passwords do not match</div>
+            </div>
+            
+            <button type="submit" class="btn">Register</button>
+        </form>
+        
+        <div class="auth-footer">
+            Already have an account? <a href="../pages/login.html">Sign In</a>
+        </div>
+    </div>
+
+    <div id="notification" class="notification"></div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer_details">
+      <div class="footer_logo">
+        <h3>LOGO</h3>
+        <p>Premium tech products with flexible payment options and exceptional service.</p>
+        <div class="socials">
+          <img src="../images/facebook.png" alt="Facebook" />
+          <img src="../images/insta.png" alt="Instagram" />
+          <img src="../images/linkedin.png" alt="LinkedIn" />
+        </div>
+      </div>
+      <ul class="right">
+        <li><a href="../pages/Laptops.html">Laptops</a></li>
+        <li><a href="../pages/Tablets.html">Tablets</a></li>
+        <li><a href="../pages/Printers.html">Printers</a></li>
+        <li><a href="../pages/Monitors.html">Monitors</a></li>
+        <li><a href="../pages/Phone.html">Phones</a></li>
+        <li><a href="../pages/Accessories.html">Accessories</a></li>
+      </ul>
+    </div>
+    <div class="footer_bottom">
+      <div class="footer_line"></div>
+      <p>&copy; <span id="year"></span> All rights reserved.</p>
+      <img src="../images/footer_img.png" alt="Footer Decoration" />
+    </div>
+  </footer>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Toggle password visibility
+            const togglePasswordButtons = document.querySelectorAll('.toggle-password');
+            togglePasswordButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const input = this.previousElementSibling;
+                    const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
+                    input.setAttribute('type', type);
+                    this.classList.toggle('fa-eye');
+                    this.classList.toggle('fa-eye-slash');
+                });
+            });
+
+            // Form validation
+            const registerForm = document.getElementById('registerForm');
+            registerForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Reset error messages
+                document.querySelectorAll('.error-message').forEach(el => {
+                    el.style.display = 'none';
+                });
+                
+                // Get form values
+                const name = document.getElementById('name').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const phone = document.getElementById('phone').value.trim();
+                const password = document.getElementById('password').value;
+                const confirmPassword = document.getElementById('confirmPassword').value;
+                
+                let isValid = true;
+                
+                // Validate name
+                if (name === '') {
+                    document.getElementById('nameError').style.display = 'block';
+                    isValid = false;
+                }
+                
+                // Validate email
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email)) {
+                    document.getElementById('emailError').style.display = 'block';
+                    isValid = false;
+                }
+                
+                // Validate phone (basic validation)
+                const phoneRegex = /^[0-9]{10,15}$/;
+                if (!phoneRegex.test(phone)) {
+                    document.getElementById('phoneError').style.display = 'block';
+                    isValid = false;
+                }
+                
+                // Validate password
+                if (password.length < 6) {
+                    document.getElementById('passwordError').style.display = 'block';
+                    isValid = false;
+                }
+                
+                // Validate confirm password
+                if (password !== confirmPassword) {
+                    document.getElementById('confirmPasswordError').style.display = 'block';
+                    isValid = false;
+                }
+                
+                if (isValid) {
+                    // Save user data to localStorage (in a real app, you'd send to a server)
+                    const users = JSON.parse(localStorage.getItem('users')) || [];
+                    
+                    // Check if email already exists
+                    const userExists = users.some(user => user.email === email);
+                    if (userExists) {
+                        showNotification('Email already registered', 'error');
+                        return;
+                    }
+                    
+                    // Create new user object
+                    const newUser = {
+                        id: Date.now().toString(),
+                        name,
+                        email,
+                        phone,
+                        password, // Note: In a real app, never store plain text passwords
+                        createdAt: new Date().toISOString()
+                    };
+                    
+                    // Add to users array
+                    users.push(newUser);
+                    localStorage.setItem('users', JSON.stringify(users));
+                    
+                    // Show success message
+                    showNotification('Registration successful!', 'success');
+                    
+                    // Redirect to login page after 2 seconds
+                    setTimeout(() => {
+                        window.location.href = 'login.html';
+                    }, 2000);
+                }
+            });
+            
+            // Notification function
+            function showNotification(message, type) {
+                const notification = document.getElementById('notification');
+                notification.textContent = message;
+                notification.className = `notification ${type} show`;
+                
+                setTimeout(() => {
+                    notification.classList.remove('show');
+                }, 3000);
+            }
+        });
+        // Set the current year dynamically
+    document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+ </body>
+ </html>

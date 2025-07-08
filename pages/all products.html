@@ -1,114 +1,25 @@
-<!-- 
-<!DOCTYPE html>
+
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cart Card</title>
-  <style>
-    .cart-card {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      padding: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      margin-bottom: 1rem;
-    }
-
-    .cart-card img {
-      width: 100px;
-      height: 100px;
-      object-fit: cover;
-      border-radius: 8px;
-    }
-
-    .cart-card div {
-      flex: 1;
-    }
-
-    .cart-card h4 {
-      margin: 0;
-      font-size: 1.2rem;
-    }
-
-    .cart-card p {
-      margin: 0.5rem 0;
-    }
-
-    .cart-card button {
-      background-color: #f44336;
-      color: white;
-      border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-
-    .cart-card button:hover {
-      background-color: #d32f2f;
-    }
-  </style>
-</head>
-<body>
-  <div id="app">
-    <!-- Cart item template -
-  </div>
-
-  <script>
-    // Example item data
-    const item = {
-      id: 1,
-      image: 'https://via.placeholder.com/100',
-      name: 'Sample Item',
-      quantity: 2,
-      price: 20
-    };
-
-    // Function to render the cart card
-    function renderCartCard(item) {
-      const app = document.getElementById('app');
-      app.innerHTML = `
-        <div class="cart-card">
-          <img src="${item.image}" alt="${item.name}" />
-          <div>
-            <h4>${item.name}</h4>
-            <p>Quantity: ${item.quantity}</p>
-            <p>Total: $${item.price * item.quantity}</p>
-            <button onclick="removeItem(${item.id})">Remove</button>
-          </div>
-        </div>
-      `;
-    }
-
-    // Function to handle the remove action
-    function removeItem(id) {
-      alert(`Item with ID ${id} removed!`);
-      // Add logic to remove the item from your data source
-    }
-
-    // Render the cart card
-    renderCartCard(item);
-  </script>
-</body>
-</html> -->
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Enhanced Laptop Store</title>
+  <title>All Products Page</title>
   <link
     href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Open+Sans:wght@400;600&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
     body {
-      margin: 0;
       font-family: 'Roboto', Arial, sans-serif;
       overflow-x: hidden;
-      background-color: #f5f7fa;
+      background-color: white
     }
 
      header {
@@ -443,6 +354,10 @@
       display: flex;
       align-items: center;
       justify-content: center;
+    }
+    
+    .wishlist-icon.active i {
+      color: #ff4081 !important;
     }
     
     .product-image-container {
@@ -982,29 +897,30 @@
     <a href="#">Sale ₦1200 Off Your First Order</a>
   </div>
   <header>
-    <div class="logo">LOGO</div>
+    <a href="../index.html"><div class="logo">LOGO</div></a>
     <div class="search-bar">
       <input type="text" placeholder="Search for products, brands...">
       <button>Search</button>
     </div>
     <div class="menu">
-      <a href="#"><i class="fa fa-heart-o"></i> Wishlist</a>
-      <a href="#"><i class="fa fa-shopping-cart"></i> Cart</a>
-      <a href="#"><i class="fa fa-credit-card-alt"></i> Payment Method</a>
+      <a href="../pages/Wishlist.html"><i class="fa fa-heart-o"></i> Wishlist</a>
+      <a href="../pages/login.html">Login || Register</a>
+      <a href="../pages/Cart.html"><i class="fa fa-shopping-cart"></i> Cart</a>
+      <a href="../pages/Paymentmethod.html"><i class="fa fa-credit-card-alt"></i> Payment Method</a>
     </div>
   </header>
   <nav>
-    <a href="#">Home /</a>
-    <a href="#">Accessories</a>
-    <!-- <a href="#">Printers</a>
-    <a href="#">Monitors</a>
-    <a href="#">Phones</a>
-    <a href="#">Accessories</a> -->
+    <a href="../pages/Laptops.html">Laptops</a>
+    <a href="../pages/Tablets.html">Tablets</a>
+    <a href="../pages/Printers.html">Printers</a>
+    <a href="../pages/Monitors.html">Monitors</a>
+    <a href="../pages/Phone.html">Phones</a>
+    <a href="../pages/Accessories.html">Accessories</a>
   </nav>
-  <section class="hero" style="background-image: url('../images/Bg1.png');">
+  <section class="hero" style="background-image: url('https://vue-ecommerce-theta.vercel.app/assets/BgAccessory-DzQ7i60o.png');">
     <div class="hero-content">
-      <h1>Shop The best Desktop</h1>
-      <p>Discover premium tech products with flexible payment options.</p>
+      <h1>All Products</h1>
+      <p>Browser our complete collection of premium tech products. Use the filters to find exactly whate you're looking for.</p>
     </div>
   </section>
 
@@ -1013,10 +929,12 @@
       <div class="controls-container">
           <div class="category-tabs">
               <button class="category-tab active">All</button>
-              <button class="category-tab">Business</button>
-              <button class="category-tab">Everyday use</button>
-              <button class="category-tab">School</button>
-              <button class="category-tab">Gaming</button>
+              <button class="category-tab">Printers</button>
+              <button class="category-tab">Laptops</button>
+              <button class="category-tab">Monitors</button>
+            <button class="category-tab">accessories</button>
+            <button class="category-tab">tablets</button>
+            <button class="category-tab">Phones</button>
           </div>
           <div class="sort-options">
               <div class="sort-by">
@@ -1105,7 +1023,7 @@
   <footer class="footer">
       <div class="footer_details">
         <div class="footer_logo">
-          <h3>TechFlex</h3>
+          <h3>LOGO</h3>
           <p>Premium tech products with flexible payment options and exceptional service.</p>
           <div class="socials">
             <img src="../images/facebook.png" alt="Facebook" />
@@ -1114,13 +1032,13 @@
           </div>
         </div>
         <ul class="right">
-          <li><a href="#">Laptops</a></li>
-          <li><a href="#">Desktops</a></li>
-          <li><a href="#">Printers</a></li>
-          <li><a href="#">Monitors</a></li>
-          <li><a href="#">Phones</a></li>
-          <li><a href="#">Accessories</a></li>
-        </ul>
+        <li><a href="../pages/Laptops.html">Laptops</a></li>
+        <li><a href="../pages/Tablets.html">Tablets</a></li>
+        <li><a href="../pages/Printers.html">Printers</a></li>
+        <li><a href="../pages/Monitors.html">Monitors</a></li>
+        <li><a href="../pages/Phone.html">Phones</a></li>
+        <li><a href="../pages/Accessories.html">Accessories</a></li>
+      </ul>
       </div>
       <div class="footer_bottom">
         <div class="footer_line"></div>
@@ -1136,6 +1054,206 @@
     // Products Data with added dates for sorting
     const productsData = [
         {
+    "id": 1,
+    "name": "HP Printer Model 641",
+    "category": "printers",
+    "brand": "HP",
+    "use": "Office use",
+    "old_price": 1769.87,
+    "new_price": 1419.37,
+    "rating": 4.4
+  },
+  {
+    "id": 2,
+    "name": "Canon Printer Model 566",
+    "category": "printers",
+    "brand": "Canon",
+    "use": "Photo printing",
+    "old_price": 792.34,
+    "new_price": 630.51,
+    "rating": 4.7
+  },
+  {
+    "id": 3,
+    "name": "Canon Printer Model 962",
+    "category": "printers",
+    "brand": "Canon",
+    "use": "Office use",
+    "old_price": 1962.46,
+    "new_price": 1581.09,
+    "rating": 4.9
+  },
+  {
+    "id": 4,
+    "name": "Brother Printer Model 537",
+    "category": "printers",
+    "brand": "Brother",
+    "use": "Home printing",
+    "old_price": 1947.65,
+    "new_price": 1639.57,
+    "rating": 4.4
+  },
+  {
+    "id": 5,
+    "name": "Canon Printer Model 738",
+    "category": "printers",
+    "brand": "Canon",
+    "use": "Photo printing",
+    "old_price": 950.51,
+    "new_price": 825.32,
+    "rating": 4.5
+  },
+  {
+    "id": 6,
+    "name": "Brother Printer Model 118",
+    "category": "printers",
+    "brand": "Brother",
+    "use": "Home printing",
+    "old_price": 1216.93,
+    "new_price": 987.21,
+    "rating": 3.9
+  },
+  {
+    "id": 7,
+    "name": "Epson Printer Model 117",
+    "category": "printers",
+    "brand": "Epson",
+    "use": "Home printing",
+    "old_price": 1402.06,
+    "new_price": 1289.38,
+    "rating": 3.9
+  },
+  {
+    "id": 8,
+    "name": "Brother Printer Model 634",
+    "category": "printers",
+    "brand": "Brother",
+    "use": "Home printing",
+    "old_price": 319.84,
+    "new_price": 284.67,
+    "rating": 4.5
+  },
+  {
+    "id": 9,
+    "name": "Brother Printer Model 972",
+    "category": "printers",
+    "brand": "Brother",
+    "use": "Home printing",
+    "old_price": 1891.27,
+    "new_price": 1625.46,
+    "rating": 5.0
+  },
+  {
+    "id": 10,
+    "name": "HP Printer Model 719",
+    "category": "printers",
+    "brand": "HP",
+    "use": "Photo printing",
+    "old_price": 741.16,
+    "new_price": 576.91,
+    "rating": 3.6
+  },
+  {
+    "id": 11,
+    "name": "HP Printer Model 407",
+    "category": "printers",
+    "brand": "HP",
+    "use": "Photo printing",
+    "old_price": 1592.13,
+    "new_price": 1415.89,
+    "rating": 4.2
+  },
+  {
+    "id": 12,
+    "name": "Brother Printer Model 775",
+    "category": "printers",
+    "brand": "Brother",
+    "use": "Photo printing",
+    "old_price": 1797.43,
+    "new_price": 1614.26,
+    "rating": 3.9
+  },
+  {
+    "id": 13,
+    "name": "HP Printer Model 915",
+    "category": "printers",
+    "brand": "HP",
+    "use": "Home printing",
+    "old_price": 1208.43,
+    "new_price": 931.85,
+    "rating": 4.3
+  },
+  {
+    "id": 14,
+    "name": "HP Printer Model 765",
+    "category": "printers",
+    "brand": "HP",
+    "use": "Office use",
+    "old_price": 1576.47,
+    "new_price": 1373.14,
+    "rating": 3.4
+  },
+  {
+    "id": 15,
+    "name": "Canon Printer Model 851",
+    "category": "printers",
+    "brand": "Canon",
+    "use": "Home printing",
+    "old_price": 1929.66,
+    "new_price": 1384.73,
+    "rating": 4.5
+  },
+  {
+    "id": 16,
+    "name": "Epson Printer Model 119",
+    "category": "printers",
+    "brand": "Epson",
+    "use": "Office use",
+    "old_price": 227.69,
+    "new_price": 163.37,
+    "rating": 3.0
+  },
+  {
+    "id": 17,
+    "name": "Epson Printer Model 166",
+    "category": "printers",
+    "brand": "Epson",
+    "use": "Photo printing",
+    "old_price": 815.13,
+    "new_price": 731.36,
+    "rating": 4.7
+  },
+  {
+    "id": 18,
+    "name": "Canon Printer Model 297",
+    "category": "printers",
+    "brand": "Canon",
+    "use": "Photo printing",
+    "old_price": 852.37,
+    "new_price": 694.39,
+    "rating": 4.0
+  },
+  {
+    "id": 19,
+    "name": "Brother Printer Model 341",
+    "category": "printers",
+    "brand": "Brother",
+    "use": "Home printing",
+    "old_price": 389.67,
+    "new_price": 315.69,
+    "rating": 4.9
+  },
+  {
+    "id": 20,
+    "name": "Epson Printer Model 927",
+    "category": "printers",
+    "brand": "Epson",
+    "use": "Photo printing",
+    "old_price": 687.87,
+    "new_price": 619.47,
+    "rating": 3.9
+  },
+  {
             "id": 21,
             "name": "HP Laptop Model 671",
             "category": "laptops",
@@ -1354,7 +1472,827 @@
             "new_price": 730.27,
             "rating": 4.1,
             "date_added": "2023-09-15"
-        }
+        },
+        {
+        "id": 41,
+        "name": "Samsung Gaming Monitor Model 747",
+        "category": "monitors",
+        "brand": "Samsung",
+        "use": "Gaming",
+        "old_price": 1974.63,
+        "new_price": 1416.7,
+        "rating": 4.8,
+        "date_added": "2023-10-15"
+      },
+      {
+        "id": 42,
+        "name": "Acer Gaming Monitor Model 175",
+        "category": "monitors",
+        "brand": "Acer",
+        "use": "Gaming",
+        "old_price": 1523.6,
+        "new_price": 1321.13,
+        "rating": 3.6,
+        "date_added": "2023-11-20"
+      },
+      {
+        "id": 43,
+        "name": "Samsung Gaming Monitor Model 416",
+        "category": "monitors",
+        "brand": "Samsung",
+        "use": "Gaming",
+        "old_price": 1731.69,
+        "new_price": 1418.29,
+        "rating": 4.6,
+        "date_added": "2023-09-05"
+      },
+      {
+        "id": 44,
+        "name": "Dell Graphic Design Monitor Model 733",
+        "category": "monitors",
+        "brand": "Dell",
+        "use": "Graphic design",
+        "old_price": 1756.32,
+        "new_price": 1508.44,
+        "rating": 4.8,
+        "date_added": "2023-12-10"
+      },
+      {
+        "id": 45,
+        "name": "Dell Graphic Design Monitor Model 178",
+        "category": "monitors",
+        "brand": "Dell",
+        "use": "Graphic design",
+        "old_price": 271.14,
+        "new_price": 198.28,
+        "rating": 3.6,
+        "date_added": "2023-08-22"
+      },
+      {
+        "id": 46,
+        "name": "Acer Gaming Monitor Model 524",
+        "category": "monitors",
+        "brand": "Acer",
+        "use": "Gaming",
+        "old_price": 1010.79,
+        "new_price": 930.81,
+        "rating": 3.2,
+        "date_added": "2023-07-30"
+      },
+      {
+        "id": 47,
+        "name": "Samsung Gaming Monitor Model 114",
+        "category": "monitors",
+        "brand": "Samsung",
+        "use": "Gaming",
+        "old_price": 512.14,
+        "new_price": 403.45,
+        "rating": 3.5,
+        "date_added": "2023-11-15"
+      },
+      {
+        "id": 48,
+        "name": "Dell Graphic Design Monitor Model 253",
+        "category": "monitors",
+        "brand": "Dell",
+        "use": "Graphic design",
+        "old_price": 272.88,
+        "new_price": 191.59,
+        "rating": 3.1,
+        "date_added": "2023-10-01"
+      },
+      {
+        "id": 49,
+        "name": "Samsung Gaming Monitor Model 874",
+        "category": "monitors",
+        "brand": "Samsung",
+        "use": "Gaming",
+        "old_price": 1582.57,
+        "new_price": 1289.38,
+        "rating": 3.3,
+        "date_added": "2023-09-18"
+      },
+      {
+        "id": 50,
+        "name": "LG Gaming Monitor Model 271",
+        "category": "monitors",
+        "brand": "LG",
+        "use": "Gaming",
+        "old_price": 285.69,
+        "new_price": 217.79,
+        "rating": 3.3,
+        "date_added": "2023-12-05"
+      },
+      {
+        "id": 51,
+        "name": "Dell Graphic Design Monitor Model 221",
+        "category": "monitors",
+        "brand": "Dell",
+        "use": "Graphic design",
+        "old_price": 1978.91,
+        "new_price": 1746.06,
+        "rating": 4.0,
+        "date_added": "2023-08-10"
+      },
+      {
+        "id": 52,
+        "name": "LG Graphic Design Monitor Model 463",
+        "category": "monitors",
+        "brand": "LG",
+        "use": "Graphic design",
+        "old_price": 402.99,
+        "new_price": 290.23,
+        "rating": 4.7,
+        "date_added": "2023-11-25"
+      },
+      {
+        "id": 53,
+        "name": "Dell Gaming Monitor Model 617",
+        "category": "monitors",
+        "brand": "Dell",
+        "use": "Gaming",
+        "old_price": 1964.44,
+        "new_price": 1735.99,
+        "rating": 4.5,
+        "date_added": "2023-10-12"
+      },
+      {
+        "id": 54,
+        "name": "Dell Gaming Monitor Model 315",
+        "category": "monitors",
+        "brand": "Dell",
+        "use": "Gaming",
+        "old_price": 1126.29,
+        "new_price": 1059.39,
+        "rating": 4.9,
+        "date_added": "2023-11-05"
+      },
+      {
+        "id": 55,
+        "name": "Dell Office Monitor Model 715",
+        "category": "monitors",
+        "brand": "Dell",
+        "use": "Office work",
+        "old_price": 492.78,
+        "new_price": 345.76,
+        "rating": 3.5,
+        "date_added": "2023-09-25"
+      },
+      {
+        "id": 56,
+        "name": "Acer Gaming Monitor Model 215",
+        "category": "monitors",
+        "brand": "Acer",
+        "use": "Gaming",
+        "old_price": 1219.67,
+        "new_price": 1063.25,
+        "rating": 3.4,
+        "date_added": "2023-10-30"
+      },
+      {
+        "id": 57,
+        "name": "Acer Gaming Monitor Model 423",
+        "category": "monitors",
+        "brand": "Acer",
+        "use": "Gaming",
+        "old_price": 811.92,
+        "new_price": 708.18,
+        "rating": 4.8,
+        "date_added": "2023-12-01"
+      },
+      {
+        "id": 58,
+        "name": "Samsung Graphic Design Monitor Model 926",
+        "category": "monitors",
+        "brand": "Samsung",
+        "use": "Graphic design",
+        "old_price": 606.48,
+        "new_price": 467.07,
+        "rating": 4.2,
+        "date_added": "2023-11-10"
+      },
+      {
+        "id": 59,
+        "name": "LG Office Monitor Model 922",
+        "category": "monitors",
+        "brand": "LG",
+        "use": "Office work",
+        "old_price": 1748.83,
+        "new_price": 1238.14,
+        "rating": 4.4,
+        "date_added": "2023-10-05"
+      },
+      {
+        "id": 60,
+        "name": "Acer Graphic Design Monitor Model 594",
+        "category": "monitors",
+        "brand": "Acer",
+        "use": "Graphic design",
+        "old_price": 1412.86,
+        "new_price": 1177.58,
+        "rating": 4.5,
+        "date_added": "2023-09-15"
+      },
+       {
+    "id": 61,
+    "name": "Razer Accessorie Model 360",
+    "category": "accessories",
+    "brand": "Razer",
+    "use": "Gaming",
+    "old_price": 861.21,
+    "new_price": 631.32,
+    "rating": 4.5
+  },
+  {
+    "id": 62,
+    "name": "Razer Accessorie Model 940",
+    "category": "accessories",
+    "brand": "Razer",
+    "use": "Gaming",
+    "old_price": 1435.3,
+    "new_price": 1360.18,
+    "rating": 3.5
+  },
+  {
+    "id": 63,
+    "name": "Corsair Accessorie Model 510",
+    "category": "accessories",
+    "brand": "Corsair",
+    "use": "Gaming",
+    "old_price": 957.69,
+    "new_price": 681.3,
+    "rating": 4.6
+  },
+  {
+    "id": 64,
+    "name": "Logitech Accessorie Model 267",
+    "category": "accessories",
+    "brand": "Logitech",
+    "use": "Gaming",
+    "old_price": 253.85,
+    "new_price": 185.05,
+    "rating": 4.9
+  },
+  {
+    "id": 65,
+    "name": "Razer Accessorie Model 365",
+    "category": "accessories",
+    "brand": "Razer",
+    "use": "Gaming",
+    "old_price": 1054.26,
+    "new_price": 782.8,
+    "rating": 3.6
+  },
+  {
+    "id": 66,
+    "name": "Logitech Accessorie Model 115",
+    "category": "accessories",
+    "brand": "Logitech",
+    "use": "Productivity",
+    "old_price": 639.22,
+    "new_price": 458.77,
+    "rating": 4.4
+  },
+  {
+    "id": 67,
+    "name": "Logitech Accessorie Model 394",
+    "category": "accessories",
+    "brand": "Logitech",
+    "use": "Productivity",
+    "old_price": 1095.01,
+    "new_price": 912.03,
+    "rating": 4.4
+  },
+  {
+    "id": 68,
+    "name": "Logitech Accessorie Model 988",
+    "category": "accessories",
+    "brand": "Logitech",
+    "use": "Travel",
+    "old_price": 891.01,
+    "new_price": 761.23,
+    "rating": 3.6
+  },
+  {
+    "id": 69,
+    "name": "Corsair Accessorie Model 650",
+    "category": "accessories",
+    "brand": "Corsair",
+    "use": "Gaming",
+    "old_price": 1564.1,
+    "new_price": 1215.06,
+    "rating": 3.9
+  },
+  {
+    "id": 70,
+    "name": "Logitech Accessorie Model 327",
+    "category": "accessories",
+    "brand": "Logitech",
+    "use": "Gaming",
+    "old_price": 1141.78,
+    "new_price": 1001.07,
+    "rating": 3.3
+  },
+  {
+    "id": 71,
+    "name": "Corsair Accessorie Model 696",
+    "category": "accessories",
+    "brand": "Corsair",
+    "use": "Gaming",
+    "old_price": 787.52,
+    "new_price": 606.56,
+    "rating": 3.1
+  },
+  {
+    "id": 72,
+    "name": "Logitech Accessorie Model 215",
+    "category": "accessories",
+    "brand": "Logitech",
+    "use": "Travel",
+    "old_price": 1639.17,
+    "new_price": 1481.09,
+    "rating": 3.1
+  },
+  {
+    "id": 73,
+    "name": "Razer Accessorie Model 204",
+    "category": "accessories",
+    "brand": "Razer",
+    "use": "Gaming",
+    "old_price": 939.21,
+    "new_price": 801.14,
+    "rating": 3.7
+  },
+  {
+    "id": 74,
+    "name": "Logitech Accessorie Model 325",
+    "category": "accessories",
+    "brand": "Logitech",
+    "use": "Productivity",
+    "old_price": 397.1,
+    "new_price": 297.18,
+    "rating": 3.5
+  },
+  {
+    "id": 75,
+    "name": "Anker Accessorie Model 656",
+    "category": "accessories",
+    "brand": "Anker",
+    "use": "Productivity",
+    "old_price": 1985.92,
+    "new_price": 1427.68,
+    "rating": 4.0
+  },
+  {
+    "id": 76,
+    "name": "Razer Accessorie Model 301",
+    "category": "accessories",
+    "brand": "Razer",
+    "use": "Productivity",
+    "old_price": 931.8,
+    "new_price": 858.28,
+    "rating": 3.0
+  },
+  {
+    "id": 77,
+    "name": "Razer Accessorie Model 686",
+    "category": "accessories",
+    "brand": "Razer",
+    "use": "Gaming",
+    "old_price": 1432.44,
+    "new_price": 1135.47,
+    "rating": 3.7
+  },
+  {
+    "id": 78,
+    "name": "Anker Accessorie Model 706",
+    "category": "accessories",
+    "brand": "Anker",
+    "use": "Gaming",
+    "old_price": 1511.59,
+    "new_price": 1358.74,
+    "rating": 4.0
+  },
+  {
+    "id": 79,
+    "name": "Corsair Accessorie Model 968",
+    "category": "accessories",
+    "brand": "Corsair",
+    "use": "Productivity",
+    "old_price": 592.66,
+    "new_price": 461.8,
+    "rating": 3.7
+  },
+  {
+    "id": 80,
+    "name": "Corsair Accessorie Model 489",
+    "category": "accessories",
+    "brand": "Corsair",
+    "use": "Gaming",
+    "old_price": 606.61,
+    "new_price": 462.7,
+    "rating": 4.6
+  },
+   {
+    "id": 81,
+    "name": "HP Desktop Model 881",
+    "category": "tablets",
+    "brand": "HP",
+    "use": "Office work",
+    "old_price": 1970.79,
+    "new_price": 1547.49,
+    "rating": 4.1
+  },
+  {
+    "id": 82,
+    "name": "Acer Desktop Model 461",
+    "category": "tablets",
+    "brand": "Acer",
+    "use": "Gaming",
+    "old_price": 306.09,
+    "new_price": 250.58,
+    "rating": 4.3
+  },
+  {
+    "id": 83,
+    "name": "Acer Desktop Model 746",
+    "category": "tablets",
+    "brand": "Acer",
+    "use": "Gaming",
+    "old_price": 1275.79,
+    "new_price": 1187.38,
+    "rating": 3.8
+  },
+  {
+    "id": 84,
+    "name": "Dell Desktop Model 931",
+    "category": "tablets",
+    "brand": "Dell",
+    "use": "Development",
+    "old_price": 1584.66,
+    "new_price": 1468.56,
+    "rating": 4.9
+  },
+  {
+    "id": 85,
+    "name": "Acer Desktop Model 538",
+    "category": "tablets",
+    "brand": "Acer",
+    "use": "Office work",
+    "old_price": 741.87,
+    "new_price": 696.5,
+    "rating": 4.7
+  },
+  {
+    "id": 86,
+    "name": "Acer Desktop Model 950",
+    "category": "tablets",
+    "brand": "Acer",
+    "use": "Development",
+    "old_price": 1669.97,
+    "new_price": 1521.47,
+    "rating": 4.7
+  },
+  {
+    "id": 87,
+    "name": "HP Desktop Model 163",
+    "category": "tablets",
+    "brand": "HP",
+    "use": "Gaming",
+    "old_price": 640.01,
+    "new_price": 577.82,
+    "rating": 3.5
+  },
+  {
+    "id": 88,
+    "name": "Dell Desktop Model 457",
+    "category": "tablets",
+    "brand": "Dell",
+    "use": "Gaming",
+    "old_price": 1142.06,
+    "new_price": 824.1,
+    "rating": 4.8
+  },
+  {
+    "id": 89,
+    "name": "HP Desktop Model 851",
+    "category": "tablets",
+    "brand": "HP",
+    "use": "Development",
+    "old_price": 1095.9,
+    "new_price": 769.15,
+    "rating": 4.9
+  },
+  {
+    "id": 90,
+    "name": "HP Desktop Model 935",
+    "category": "tablets",
+    "brand": "HP",
+    "use": "Office work",
+    "old_price": 1537.68,
+    "new_price": 1077.75,
+    "rating": 3.3
+  },
+  {
+    "id": 91,
+    "name": "Dell Desktop Model 993",
+    "category": "tablets",
+    "brand": "Dell",
+    "use": "Office work",
+    "old_price": 983.18,
+    "new_price": 755.33,
+    "rating": 3.8
+  },
+  {
+    "id": 92,
+    "name": "HP Desktop Model 751",
+    "category": "tablets",
+    "brand": "HP",
+    "use": "Development",
+    "old_price": 414.42,
+    "new_price": 371.46,
+    "rating": 4.0
+  },
+  {
+    "id": 93,
+    "name": "HP Desktop Model 210",
+    "category": "tablets",
+    "brand": "HP",
+    "use": "Gaming",
+    "old_price": 776.65,
+    "new_price": 722.4,
+    "rating": 4.6
+  },
+  {
+    "id": 94,
+    "name": "Lenovo Desktop Model 266",
+    "category": "tablets",
+    "brand": "Lenovo",
+    "use": "Office work",
+    "old_price": 275.83,
+    "new_price": 227.35,
+    "rating": 4.9
+  },
+  {
+    "id": 95,
+    "name": "Dell Desktop Model 373",
+    "category": "tablets",
+    "brand": "Dell",
+    "use": "Development",
+    "old_price": 486.91,
+    "new_price": 378.25,
+    "rating": 4.5
+  },
+  {
+    "id": 96,
+    "name": "Dell Desktop Model 701",
+    "category": "tablets",
+    "brand": "Dell",
+    "use": "Gaming",
+    "old_price": 1516.68,
+    "new_price": 1129.05,
+    "rating": 3.1
+  },
+  {
+    "id": 97,
+    "name": "HP Desktop Model 352",
+    "category": "tablets",
+    "brand": "HP",
+    "use": "Development",
+    "old_price": 350.34,
+    "new_price": 266.78,
+    "rating": 3.3
+  },
+  {
+    "id": 98,
+    "name": "Acer Desktop Model 451",
+    "category": "tablets",
+    "brand": "Acer",
+    "use": "Gaming",
+    "old_price": 775.98,
+    "new_price": 556.18,
+    "rating": 4.2
+  },
+  {
+    "id": 99,
+    "name": "Lenovo Desktop Model 688",
+    "category": "tablets",
+    "brand": "Lenovo",
+    "use": "Office work",
+    "old_price": 1464.37,
+    "new_price": 1106.4,
+    "rating": 3.8
+  },
+  {
+    "id": 100,
+    "name": "Dell Desktop Model 337",
+    "category": "tablets",
+    "brand": "Dell",
+    "use": "Development",
+    "old_price": 1093.73,
+    "new_price": 989.99,
+    "rating": 4.6
+  },
+   {
+    "id": 101,
+    "name": "Google Phone Model 537",
+    "category": "phones",
+    "brand": "Google",
+    "use": "Gaming",
+    "old_price": 700.65,
+    "new_price": 525.69,
+    "rating": 4.9
+  },
+  {
+    "id": 102,
+    "name": "Apple Phone Model 349",
+    "category": "phones",
+    "brand": "Apple",
+    "use": "Photography",
+    "old_price": 1300.29,
+    "new_price": 1078.46,
+    "rating": 3.1
+  },
+  {
+    "id": 103,
+    "name": "Samsung Phone Model 490",
+    "category": "phones",
+    "brand": "Samsung",
+    "use": "Business",
+    "old_price": 435.28,
+    "new_price": 335.77,
+    "rating": 3.4
+  },
+  {
+    "id": 104,
+    "name": "OnePlus Phone Model 976",
+    "category": "phones",
+    "brand": "OnePlus",
+    "use": "Business",
+    "old_price": 1782.47,
+    "new_price": 1645.6,
+    "rating": 3.2
+  },
+  {
+    "id": 105,
+    "name": "Apple Phone Model 694",
+    "category": "phones",
+    "brand": "Apple",
+    "use": "Social media",
+    "old_price": 860.64,
+    "new_price": 756.24,
+    "rating": 3.9
+  },
+  {
+    "id": 106,
+    "name": "Samsung Phone Model 372",
+    "category": "phones",
+    "brand": "Samsung",
+    "use": "Social media",
+    "old_price": 1853.11,
+    "new_price": 1440.09,
+    "rating": 3.4
+  },
+  {
+    "id": 107,
+    "name": "Samsung Phone Model 311",
+    "category": "phones",
+    "brand": "Samsung",
+    "use": "Gaming",
+    "old_price": 363.56,
+    "new_price": 318.22,
+    "rating": 3.4
+  },
+  {
+    "id": 108,
+    "name": "Google Phone Model 867",
+    "category": "phones",
+    "brand": "Google",
+    "use": "Business",
+    "old_price": 1751.17,
+    "new_price": 1277.71,
+    "rating": 4.0
+  },
+  {
+    "id": 109,
+    "name": "Apple Phone Model 202",
+    "category": "phones",
+    "brand": "Apple",
+    "use": "Social media",
+    "old_price": 1298.35,
+    "new_price": 949.26,
+    "rating": 3.4
+  },
+  {
+    "id": 110,
+    "name": "OnePlus Phone Model 794",
+    "category": "phones",
+    "brand": "OnePlus",
+    "use": "Social media",
+    "old_price": 743.15,
+    "new_price": 684.53,
+    "rating": 3.2
+  },
+  {
+    "id": 111,
+    "name": "Google Phone Model 782",
+    "category": "phones",
+    "brand": "Google",
+    "use": "Gaming",
+    "old_price": 1527.49,
+    "new_price": 1385.84,
+    "rating": 4.7
+  },
+  {
+    "id": 112,
+    "name": "OnePlus Phone Model 724",
+    "category": "phones",
+    "brand": "OnePlus",
+    "use": "Social media",
+    "old_price": 305.77,
+    "new_price": 253.96,
+    "rating": 4.5
+  },
+  {
+    "id": 113,
+    "name": "OnePlus Phone Model 561",
+    "category": "phones",
+    "brand": "OnePlus",
+    "use": "Gaming",
+    "old_price": 231.06,
+    "new_price": 212.45,
+    "rating": 3.3
+  },
+  {
+    "id": 114,
+    "name": "Apple Phone Model 478",
+    "category": "phones",
+    "brand": "Apple",
+    "use": "Business",
+    "old_price": 517.45,
+    "new_price": 393.07,
+    "rating": 3.8
+  },
+  {
+    "id": 115,
+    "name": "OnePlus Phone Model 434",
+    "category": "phones",
+    "brand": "OnePlus",
+    "use": "Social media",
+    "old_price": 622.75,
+    "new_price": 547.55,
+    "rating": 4.6
+  },
+  {
+    "id": 116,
+    "name": "Google Phone Model 822",
+    "category": "phones",
+    "brand": "Google",
+    "use": "Business",
+    "old_price": 617.15,
+    "new_price": 433.07,
+    "rating": 3.3
+  },
+  {
+    "id": 117,
+    "name": "OnePlus Phone Model 866",
+    "category": "phones",
+    "brand": "OnePlus",
+    "use": "Photography",
+    "old_price": 1299.38,
+    "new_price": 1126.72,
+    "rating": 3.5
+  },
+  {
+    "id": 118,
+    "name": "Apple Phone Model 933",
+    "category": "phones",
+    "brand": "Apple",
+    "use": "Social media",
+    "old_price": 1995.82,
+    "new_price": 1824.89,
+    "rating": 4.2
+  },
+  {
+    "id": 119,
+    "name": "Google Phone Model 412",
+    "category": "phones",
+    "brand": "Google",
+    "use": "Social media",
+    "old_price": 1271.33,
+    "new_price": 1082.08,
+    "rating": 3.8
+  },
+  {
+    "id": 120,
+    "name": "Samsung Phone Model 698",
+    "category": "phones",
+    "brand": "Samsung",
+    "use": "Business",
+    "old_price": 604.49,
+    "new_price": 473.14,
+    "rating": 4.3
+  }
     ];
 
     // Initialize variables
@@ -1364,6 +2302,7 @@
     let selectedBrands = [];
     let selectedCategories = [];
     let currentSort = '';
+    let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
 
     // Initialize the page
     document.addEventListener('DOMContentLoaded', function() {
@@ -1373,7 +2312,7 @@
         renderProducts();
         renderPagination();
         
-        // Tab switching functionality
+        // Tab switching functionality - MODIFIED FOR CATEGORY FILTERING
         const tabs = document.querySelectorAll('.category-tab');
         tabs.forEach(tab => {
             tab.addEventListener('click', () => {
@@ -1381,13 +2320,13 @@
                 tab.classList.add('active');
                 
                 // Get the category from tab text
-                const category = tab.textContent.trim();
+                const category = tab.textContent.trim().toLowerCase();
                 
-                if (category === "All") {
+                if (category === "all") {
                     filteredProducts = [...productsData];
                 } else {
                     filteredProducts = productsData.filter(product => 
-                        product.use === category
+                        product.category === category
                     );
                 }
                 
@@ -1398,17 +2337,38 @@
             });
         });
 
-        // Wishlist icon functionality
+        // Wishlist icon functionality - MODIFIED FOR PERSISTENT STORAGE
         document.addEventListener('click', function(e) {
-            if (e.target.classList.contains('fa-heart-o') || e.target.classList.contains('fa-heart')) {
-                e.target.classList.toggle('fa-heart-o');
-                e.target.classList.toggle('fa-heart');
+            if (e.target.classList.contains('fa-heart-o') || 
+                e.target.classList.contains('fa-heart')) {
                 
-                if (e.target.classList.contains('fa-heart')) {
-                    e.target.style.color = '#ff4081';
+                const heartIcon = e.target;
+                const productCard = heartIcon.closest('.product-card');
+                const productId = parseInt(productCard.dataset.id);
+                
+                // Toggle UI
+                heartIcon.classList.toggle('fa-heart-o');
+                heartIcon.classList.toggle('fa-heart');
+                
+                // Toggle parent class
+                const wishlistIcon = heartIcon.closest('.wishlist-icon');
+                wishlistIcon.classList.toggle('active');
+                
+                if (heartIcon.classList.contains('fa-heart')) {
+                    heartIcon.style.color = '#ff4081';
+                    // Add to wishlist
+                    const product = productsData.find(p => p.id === productId);
+                    if (product && !wishlist.some(p => p.id === productId)) {
+                        wishlist.push(product);
+                    }
                 } else {
-                    e.target.style.color = 'white';
+                    heartIcon.style.color = 'white';
+                    // Remove from wishlist
+                    wishlist = wishlist.filter(p => p.id !== productId);
                 }
+                
+                // Save to localStorage
+                localStorage.setItem('wishlist', JSON.stringify(wishlist));
             }
         });
     });
@@ -1676,7 +2636,7 @@
         renderPagination();
     }
 
-    // Render products
+    // Render products - MODIFIED TO INCLUDE WISHLIST STATUS
     function renderProducts() {
         const productsContainer = document.getElementById('products-container');
         productsContainer.innerHTML = '';
@@ -1686,12 +2646,18 @@
         const productsToShow = filteredProducts.slice(startIndex, endIndex);
         
         productsToShow.forEach(product => {
+            const isInWishlist = wishlist.some(p => p.id === product.id);
             const discountPercent = Math.round((1 - product.new_price / product.old_price) * 100);
+            
             const productCard = document.createElement('div');
             productCard.className = 'product-card';
+            productCard.dataset.id = product.id; // Add data-id attribute
+            
             productCard.innerHTML = `
                 <span class="discount-tag">${discountPercent}% Off</span>
-                <span class="wishlist-icon"><i class="fa fa-heart-o"></i></span>
+                <span class="wishlist-icon ${isInWishlist ? 'active' : ''}">
+                    <i class="fa ${isInWishlist ? 'fa-heart' : 'fa-heart-o'}"></i>
+                </span>
                 <div class="product-image-container">
                     <img src="https://vue-ecommerce-theta.vercel.app/images/product_img.png" alt="${product.name}" class="product-image">
                     <span class="gallery">
@@ -1769,6 +2735,357 @@
             renderPagination();
         }
     }
+
+    <!-- Add this script at the bottom of your existing JavaScript -->
+// Wishlist functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize wishlist count
+    updateWishlistCount();
+    
+    // Function to update wishlist count in header
+    function updateWishlistCount() {
+        const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+        const wishlistLink = document.querySelector('.menu a:nth-child(1)');
+        if (wishlistLink) {
+            wishlistLink.innerHTML = `<i class="fa fa-heart-o"></i> Wishlist (${wishlist.length})`;
+        }
+    }
+    
+    // Function to toggle product in wishlist
+    function toggleWishlist(productId, iconElement) {
+        const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+        const product = productsData.find(p => p.id == productId);
+        
+        if (!product) return;
+        
+        const existingIndex = wishlist.findIndex(item => item.id == productId);
+        
+        if (existingIndex === -1) {
+            // Add to wishlist
+            wishlist.push({
+                id: product.id,
+                name: product.name,
+                new_price: product.new_price,
+                old_price: product.old_price,
+                category: product.category,
+                brand: product.brand,
+                use: product.use,
+                rating: product.rating,
+                image: "https://vue-ecommerce-theta.vercel.app/images/product_img.png" // Using your default product image
+            });
+            iconElement.classList.remove('fa-heart-o');
+            iconElement.classList.add('fa-heart');
+            iconElement.style.color = '#ff4081';
+            
+            // Show success notification
+            showNotification(`${product.name} added to wishlist!`);
+        } else {
+            // Remove from wishlist
+            wishlist.splice(existingIndex, 1);
+            iconElement.classList.remove('fa-heart');
+            iconElement.classList.add('fa-heart-o');
+            iconElement.style.color = 'white';
+            
+            // Show removal notification
+            showNotification(`${product.name} removed from wishlist`);
+        }
+        
+        localStorage.setItem('wishlist', JSON.stringify(wishlist));
+        updateWishlistCount();
+    }
+    
+    // Function to show notification
+    function showNotification(message) {
+        // Remove existing notification if any
+        const existingNotif = document.querySelector('.wishlist-notification');
+        if (existingNotif) existingNotif.remove();
+        
+        const notification = document.createElement('div');
+        notification.className = 'wishlist-notification';
+        notification.textContent = message;
+        notification.style.cssText = `
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #224893;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 1000;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        `;
+        
+        document.body.appendChild(notification);
+        
+        // Animate in
+        setTimeout(() => {
+            notification.style.opacity = '1';
+            notification.style.transform = 'translateY(0)';
+        }, 10);
+        
+        // Animate out after 3 seconds
+        setTimeout(() => {
+            notification.style.opacity = '0';
+            notification.style.transform = 'translateY(20px)';
+            setTimeout(() => notification.remove(), 300);
+        }, 3000);
+    }
+    
+    // Function to initialize wishlist icons on product cards
+    function initializeWishlistIcons() {
+        const wishlistIcons = document.querySelectorAll('.wishlist-icon i');
+        const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+        
+        wishlistIcons.forEach(icon => {
+            const productCard = icon.closest('.product-card');
+            if (!productCard) return;
+            
+            const wishlistIconContainer = productCard.querySelector('.wishlist-icon');
+            const productId = wishlistIconContainer.dataset.productId;
+            if (!productId) return;
+            
+            if (wishlist.some(item => item.id == productId)) {
+                icon.classList.remove('fa-heart-o');
+                icon.classList.add('fa-heart');
+                icon.style.color = '#ff4081';
+            }
+            
+            // Add click event
+            icon.addEventListener('click', function(e) {
+                e.preventDefault();
+                toggleWishlist(productId, this);
+            });
+        });
+    }
+    
+    // Modify renderProducts function to add data attributes
+    const originalRenderProducts = renderProducts;
+    renderProducts = function() {
+        originalRenderProducts.call(this);
+        
+        // Add product IDs to wishlist icons
+        document.querySelectorAll('.wishlist-icon').forEach((icon, index) => {
+            const startIndex = (currentPage - 1) * productsPerPage;
+            const product = filteredProducts[startIndex + index];
+            if (product) {
+                icon.dataset.productId = product.id;
+            }
+        });
+        
+        // Initialize wishlist icons
+        initializeWishlistIcons();
+    };
+    
+    // Re-render products to apply changes
+    renderProducts();
+});
+
+// ========== CART MANAGEMENT SYSTEM ==========
+// This code should be added to all product pages
+
+// Initialize cart functionality on page load
+document.addEventListener('DOMContentLoaded', function() {
+  // Initialize cart counter
+  updateCartCounter();
+  
+  // Add event listeners to all "Add to Cart" buttons
+  initAddToCartButtons();
+  
+  // Update wishlist icon states
+  initWishlistIcons();
+});
+
+// Cart functions
+function getCart() {
+  return JSON.parse(localStorage.getItem('cart')) || [];
+}
+
+function saveCart(cart) {
+  localStorage.setItem('cart', JSON.stringify(cart));
+  updateCartCounter();
+}
+
+function addToCart(product) {
+  const cart = getCart();
+  
+  // Check if product is already in cart
+  const existingItem = cart.find(item => item.id === product.id);
+  
+  if (existingItem) {
+    existingItem.quantity += 1;
+  } else {
+    cart.push({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image: product.image,
+      quantity: 1
+    });
+  }
+  
+  saveCart(cart);
+  showNotification(`${product.name} added to cart!`);
+}
+
+function updateCartCounter() {
+  const cart = getCart();
+  const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+  
+  // Update cart counter in header
+  const cartCounter = document.querySelector('.menu a[href*="Cart"] .cart-count');
+  if (cartCounter) {
+    cartCounter.textContent = `(${totalItems})`;
+  }
+  
+  // Create counter if it doesn't exist
+  const cartLink = document.querySelector('.menu a[href*="Cart"]');
+  if (cartLink && !cartCounter) {
+    const countSpan = document.createElement('span');
+    countSpan.className = 'cart-count';
+    countSpan.textContent = `(${totalItems})`;
+    cartLink.appendChild(countSpan);
+  }
+}
+
+function showNotification(message) {
+  // Create notification if it doesn't exist
+  let notification = document.getElementById('cart-notification');
+  if (!notification) {
+    notification = document.createElement('div');
+    notification.id = 'cart-notification';
+    notification.className = 'notification';
+    document.body.appendChild(notification);
+    
+    // Add basic notification styling
+    const style = document.createElement('style');
+    style.textContent = `
+      .notification {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #224893;
+        color: white;
+        padding: 15px 25px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        z-index: 1000;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.3s ease;
+      }
+      .notification.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    `;
+    document.head.appendChild(style);
+  }
+  
+  notification.textContent = message;
+  notification.classList.add('show');
+  
+  setTimeout(() => {
+    notification.classList.remove('show');
+  }, 3000);
+}
+
+// Initialize Add to Cart buttons
+function initAddToCartButtons() {
+  document.querySelectorAll('.add-to-cart').forEach(button => {
+    button.addEventListener('click', function() {
+      // Get product details from the card
+      const card = this.closest('.product-card');
+      if (!card) return;
+      
+      const productId = this.dataset.id || card.querySelector('.discount-tag')?.dataset.id;
+      const productName = card.querySelector('.product-name')?.textContent || "Product";
+      const priceNew = card.querySelector('.price-new')?.textContent;
+      const productImage = card.querySelector('.product-image')?.src || "https://vue-ecommerce-theta.vercel.app/images/product_img.png";
+      
+      // Extract numeric price
+      let productPrice = 0;
+      if (priceNew) {
+        const priceMatch = priceNew.match(/[\d,]+\.\d{2}/);
+        if (priceMatch) {
+          productPrice = parseFloat(priceMatch[0].replace(/,/g, ''));
+        }
+      }
+      
+      addToCart({
+        id: productId || Date.now(), // Use timestamp as fallback ID
+        name: productName,
+        price: productPrice,
+        image: productImage
+      });
+    });
+  });
+}
+
+// Wishlist functionality
+function initWishlistIcons() {
+  const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+  
+  document.querySelectorAll('.wishlist-icon i').forEach(icon => {
+    const card = icon.closest('.product-card');
+    if (!card) return;
+    
+    const productId = card.querySelector('.add-to-cart')?.dataset.id || 
+                     card.querySelector('.discount-tag')?.dataset.id;
+    
+    if (wishlist.includes(productId)) {
+      icon.classList.remove('fa-heart-o');
+      icon.classList.add('fa-heart');
+    }
+    
+    icon.addEventListener('click', function() {
+      this.classList.toggle('fa-heart-o');
+      this.classList.toggle('fa-heart');
+      
+      const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+      const index = wishlist.indexOf(productId);
+      
+      if (this.classList.contains('fa-heart')) {
+        // Add to wishlist
+        if (index === -1) {
+          wishlist.push(productId);
+          showNotification('Added to wishlist!');
+        }
+      } else {
+        // Remove from wishlist
+        if (index !== -1) {
+          wishlist.splice(index, 1);
+          showNotification('Removed from wishlist');
+        }
+      }
+      
+      localStorage.setItem('wishlist', JSON.stringify(wishlist));
+      
+      // Update wishlist counter
+      const wishlistLink = document.querySelector('.menu a[href*="Wishlist"]');
+      if (wishlistLink) {
+        const count = wishlist.length;
+        wishlistLink.innerHTML = `<i class="fa fa-heart-o"></i> Wishlist${count ? ` (${count})` : ''}`;
+      }
+    });
+  });
+}
+
+// Update wishlist counter
+function updateWishlistCounter() {
+  const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+  const wishlistLink = document.querySelector('.menu a[href*="Wishlist"]');
+  
+  if (wishlistLink) {
+    const count = wishlist.length;
+    wishlistLink.innerHTML = `<i class="fa fa-heart-o"></i> Wishlist${count ? ` (${count})` : ''}`;
+  }
+}
+
+// Initialize wishlist counter
+updateWishlistCounter();
   </script>
 </body>
 </html>
