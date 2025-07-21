@@ -1031,6 +1031,389 @@
   padding-top: 15px;
   margin-top: 15px;
 }
+
+/* footer sction */
+        .footer {
+  background-color: #111827;
+  color: white;
+  padding: 2rem 4rem;
+  padding-bottom: 0;
+  font-family: sans-serif;
+}
+
+.footer_details {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.footer_logo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.footer_line {
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.3);
+  width: 85%;
+  margin: 0.5rem 0;
+  z-index: 1;
+  position: absolute;
+
+}
+
+.footer_logo h3 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.footer_logo p {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+.socials {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.socials img {
+  width: 24px;
+  height: 24px;
+}
+
+.right {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  /* flex-direction: column; */
+}
+
+.right li a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.footer_bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-top: 1rem;
+  width: 60%;
+  z-index: 2;
+}
+
+.footer_bottom p {
+  margin: 0;
+  font-size: 0.8rem;
+  position: relative;    
+  margin-top: 58px;
+  margin-bottom: 28px;
+}
+
+
+.footer_bottom img {
+  position: relative;
+  z-index: 4;
+}
+
+
+/* Responsive */
+@media (min-width: 768px) {
+  .footer_details {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .right {
+    /* flex-direction: column; */
+    text-align: right;
+  }
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer_bottom img {
+    width: 60%;
+    position: absolute;
+    right: 24px;
+    bottom: 0;
+  }
+
+  .footer_bottom {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  .footer_details {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  .right {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+  }
+
+  .footer {
+    height: 50vh;
+    position: relative;
+    padding: 2rem 2rem;
+  }
+
+}  
+
+
+@media (max-width: 600px) {
+  /* Header adjustments */
+  header {
+    margin-left: 0;
+    padding: 10px;
+  }
+  
+  .top-header {
+    justify-content: center;
+    padding: 5px 10px;
+  }
+  
+  .top-header a {
+    margin-right: 15px;
+    line-height: 30px;
+    font-size: 12px;
+  }
+  
+  .search-bar {
+    margin: 10px 0;
+    width: 100%;
+  }
+  
+  .menu {
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 10px;
+    gap: 8px;
+  }
+  
+  .menu a {
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  
+  /* Hero section */
+  .hero {
+    height: 30vh;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .hero-content {
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+  
+  .hero-content p {
+    font-size: 1rem;
+  }
+  
+  /* Navigation */
+  nav {
+    padding: 10px;
+    justify-content: flex-start;
+    margin-left: 0;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  
+  nav a {
+    margin: 0 8px;
+    font-size: 14px;
+  }
+  
+  /* Payment container */
+  .container {
+    padding: 0 15px;
+  }
+  
+  .page-title {
+    font-size: 24px;
+  }
+  
+  /* Payment form */
+  .payment-methods {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .payment-method {
+    padding: 12px;
+  }
+  
+  .form-input {
+    padding: 10px;
+  }
+  
+  /* Order summary */
+  .order-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .order-item-image {
+    margin-bottom: 15px;
+  }
+  
+  /* Success message */
+  .success-message {
+    padding: 15px;
+  }
+  
+  /* Footer adjustments */
+  .footer {
+    padding: 1.5rem 1rem;
+    height: auto;
+    position: relative;
+  }
+  
+  .footer_details {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .right {
+    flex-direction: column;
+  }
+  
+  .footer_bottom {
+    position: relative;
+    width: 100%;
+    margin-top: 1.5rem;
+  }
+  
+  .footer_bottom img {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    max-width: 300px;
+    margin-top: 1rem;
+  }
+  
+  .footer_bottom p {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Small Devices (portrait tablets and large phones, 600px - 768px) */
+@media (min-width: 600px) and (max-width: 768px) {
+  /* Header adjustments */
+  header {
+    margin-left: 0;
+    padding: 10px 15px;
+  }
+  
+  .menu {
+    gap: 10px;
+  }
+  
+  /* Hero section */
+  .hero {
+    height: 35vh;
+  }
+  
+  .hero-content {
+    padding: 1rem 2rem;
+  }
+  
+  /* Payment form */
+  .payment-methods {
+    flex-wrap: wrap;
+  }
+  
+  .payment-method {
+    flex: 1 1 45%;
+  }
+  
+  /* Footer adjustments */
+  .footer {
+    padding: 2rem;
+  }
+}
+
+/* Medium Devices (landscape tablets, 768px - 992px) */
+@media (min-width: 768px) and (max-width: 992px) {
+  /* Header adjustments */
+  header {
+    margin-left: 30px;
+  }
+  
+  /* Hero section */
+  .hero {
+    height: 38vh;
+  }
+  
+  /* Payment layout */
+  .payment-form {
+    flex: 1 1 60%;
+  }
+  
+  .order-summary {
+    flex: 1 1 35%;
+  }
+}
+
+/* General responsive fixes for all screen sizes */
+@media (max-width: 992px) {
+  /* Make sure images don't overflow */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Ensure clickable elements are tappable */
+  button, a, input[type="submit"], input[type="button"] {
+    min-width: 44px;
+    min-height: 44px;
+  }
+  
+  /* Prevent text overflow */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+  
+  /* Adjust form inputs */
+  .form-input {
+    font-size: 15px;
+  }
+  
+  .complete-order-btn {
+    padding: 12px;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -1178,6 +1561,32 @@
       </div>
     </div>
   </div>
+  <footer class="footer">
+    <div class="footer_details">
+      <div class="footer_logo">
+        <h3>LOGO</h3>
+        <p>Premium tech products with flexible payment options and exceptional service.</p>
+        <div class="socials">
+          <img src="../images/facebook.png" alt="Facebook" />
+          <img src="../images/insta.png" alt="Instagram" />
+          <img src="../images/linkedin.png" alt="LinkedIn" />
+        </div>
+      </div>
+      <ul class="right">
+        <li><a href="../pages/Laptops.html">Laptops</a></li>
+        <li><a href="../pages/Tablets.html">Tablets</a></li>
+        <li><a href="../pages/Printers.html">Printers</a></li>
+        <li><a href="../pages/Monitors.html">Monitors</a></li>
+        <li><a href="../pages/Phone.html">Phones</a></li>
+        <li><a href="../pages/Accessories.html">Accessories</a></li>
+      </ul>
+    </div>
+    <div class="footer_bottom">
+      <div class="footer_line"></div>
+      <p>&copy; <span id="year"></span> All rights reserved.</p>
+      <img src="../images/footer_img.png" alt="Footer Decoration" />
+    </div>
+  </footer>
   
   <!-- Cart Notification
   <div class="notification" id="cart-notification">Product added to cart!</div> -->
@@ -1270,6 +1679,28 @@
       const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
       document.getElementById('cart-counter').textContent = totalItems;
     }
+
+
+    // Add this to your existing payment functionality
+function adjustPaymentLayout() {
+  if (window.innerWidth < 768) {
+    // Mobile-specific adjustments
+    document.querySelectorAll('.form-row').forEach(row => {
+      row.style.flexDirection = 'column';
+      row.style.gap = '0';
+    });
+  } else {
+    // Reset to desktop layout
+    document.querySelectorAll('.form-row').forEach(row => {
+      row.style.flexDirection = 'row';
+      row.style.gap = '20px';
+    });
+  }
+}
+
+// Call on load and resize
+window.addEventListener('load', adjustPaymentLayout);
+window.addEventListener('resize', adjustPaymentLayout);
   </script>
 </body>
 </html>

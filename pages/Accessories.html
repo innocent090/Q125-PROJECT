@@ -18,7 +18,7 @@
     body {
       font-family: 'Roboto', Arial, sans-serif;
       overflow-x: hidden;
-      background-color: #f5f7fa;
+      background-color: white
     }
 
      header {
@@ -888,6 +888,273 @@
     .wishlist-icon i.fa-heart {
       color: #ff4081 !important;
     }
+
+    /* the new media queries */
+    @media (max-width: 600px) {
+  /* Header adjustments */
+  header {
+    margin-left: 0;
+    padding: 10px;
+  }
+  
+  .top-header {
+    justify-content: center;
+    padding: 5px 10px;
+  }
+  
+  .top-header a {
+    margin-right: 15px;
+    line-height: 30px;
+    font-size: 12px;
+  }
+  
+  .search-bar {
+    margin: 10px 0;
+    width: 100%;
+  }
+  
+  .menu {
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 10px;
+    gap: 8px;
+  }
+  
+  .menu a {
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  
+  /* Hero section */
+  .hero {
+    height: 30vh;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .hero-content {
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+  
+  .hero-content p {
+    font-size: 1rem;
+  }
+  
+  /* Navigation */
+  nav {
+    padding: 10px;
+    justify-content: flex-start;
+    margin-left: 0;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  
+  nav a {
+    margin: 0 8px;
+    font-size: 14px;
+  }
+  
+  /* Controls container */
+  .controls-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .category-tabs {
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 10px;
+  }
+  
+  .sort-options {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  
+  /* Filter section */
+  .filter-section {
+    padding: 15px;
+  }
+  
+  .filter-range {
+    padding: 8px 0;
+  }
+  
+  .input-number {
+    width: 70px !important;
+  }
+  
+  /* Products grid */
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .product-card {
+    width: 100%;
+  }
+  
+  /* Footer adjustments */
+  .footer {
+    padding: 1.5rem 1rem;
+    height: auto;
+    position: relative;
+  }
+  
+  .footer_details {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .right {
+    flex-direction: column;
+  }
+  
+  .footer_bottom {
+    position: relative;
+    width: 100%;
+    margin-top: 1.5rem;
+  }
+  
+  .footer_bottom img {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    max-width: 300px;
+    margin-top: 1rem;
+  }
+  
+  .footer_bottom p {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Small Devices (portrait tablets and large phones, 600px - 768px) */
+@media (min-width: 600px) and (max-width: 768px) {
+  /* Header adjustments */
+  header {
+    margin-left: 0;
+    padding: 10px 15px;
+  }
+  
+  .menu {
+    gap: 10px;
+  }
+  
+  /* Hero section */
+  .hero {
+    height: 35vh;
+  }
+  
+  .hero-content {
+    padding: 1rem 2rem;
+  }
+  
+  /* Products grid */
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* Filter section */
+  .filter-section {
+    padding: 15px;
+  }
+  
+  /* Footer adjustments */
+  .footer {
+    padding: 2rem;
+  }
+}
+
+/* Medium Devices (landscape tablets, 768px - 992px) */
+@media (min-width: 768px) and (max-width: 992px) {
+  /* Header adjustments */
+  header {
+    margin-left: 30px;
+  }
+  
+  /* Hero section */
+  .hero {
+    height: 38vh;
+  }
+  
+  /* Products grid */
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* Filter section */
+  .filter-section {
+    width: 30%;
+  }
+  
+  .products-section {
+    width: 70%;
+  }
+}
+
+/* General responsive fixes for all screen sizes */
+@media (max-width: 992px) {
+  /* Make sure images don't overflow */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Ensure clickable elements are tappable */
+  button, a, input[type="submit"], input[type="button"] {
+    min-width: 44px;
+    min-height: 44px;
+  }
+  
+  /* Prevent text overflow */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+  
+  /* Adjust product image height */
+  .product-image {
+    height: 150px;
+  }
+  
+  /* Make price inputs fit better */
+  .flex1 {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .input-number {
+    width: 100%;
+  }
+  
+  /* Stack filter buttons on small screens */
+  .reset-button-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .reset-button, .apply-button {
+    width: 100%;
+  }
+}
+
+/* Large Devices (laptops/desktops, 992px and up) */
+@media (min-width: 992px) {
+  /* Ensure content doesn't stretch too wide */
+  .featured-container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
   </style>
 </head>
 <body>
@@ -1667,7 +1934,7 @@
     }
 
 
-     <!-- Add this script at the bottom of your existing JavaScript -->
+   <!-- Add this script at the bottom of your existing JavaScript -->
 // Wishlist functionality
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize wishlist count

@@ -40,7 +40,7 @@
       justify-content: flex-end;
       align-items: center;
       font-size: 14px;
-      color: #000;
+      /* color: #000; */
       font-family: 'Open Sans', Arial, sans-serif;
     }
 
@@ -644,7 +644,7 @@
 .offer-large h1 {
     font-size: 32px;
     font-weight: 700;
-    margin: 10px 0;
+    margin: 7px 0;
 }
 
 .offer-large p {
@@ -937,6 +937,213 @@
 }
 
 
+
+/* Extra Small Devices (phones, 600px and down) */
+@media (max-width: 600px) {
+  /* Header adjustments */
+  header {
+    margin-left: 0;
+    padding: 10px;
+  }
+  
+  .top-header {
+    justify-content: center;
+    padding: 5px 10px;
+  }
+  
+  .top-header a {
+    margin-right: 15px;
+    line-height: 30px;
+  }
+  
+  .search-bar {
+    margin: 10px 0;
+    width: 100%;
+  }
+  
+  .menu {
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .menu a {
+    font-size: 14px;
+  }
+  
+  /* Hero section */
+  .hero {
+    margin-left: 0;
+    padding: 30px 15px;
+    text-align: center;
+  }
+  
+  .hero h1 {
+    font-size: 32px;
+  }
+  
+  .hero p {
+    font-size: 16px;
+  }
+  
+  .hero .buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .hero .buttons button {
+    width: 100%;
+  }
+  
+  .hero img {
+    max-width: 80%;
+    margin-top: 20px;
+  }
+  
+  /* Navigation */
+  nav {
+    padding: 10px 15px;
+    justify-content: center;
+    margin-left: 0;
+  }
+  
+  nav a {
+    margin: 0 8px;
+    font-size: 14px;
+  }
+  
+  /* Categories */
+  .categories-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .category-image {
+    width: 120px;
+    height: 120px;
+  }
+  
+  /* Products */
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .product-card {
+    width: 100%;
+  }
+  
+  /* Offer section */
+  .offer-section {
+    margin: 20px 10px;
+  }
+  
+  .offer-large button {
+    width: 50%;
+  }
+  
+  .offer-small button {
+    width: 20%;
+    height: 45px;
+    margin-top: 15px;
+  }
+
+  .offer-small{
+    height: auto;
+  }
+  
+  /* Services */
+  .services-container {
+    justify-content: center;
+  }
+  
+  .service-item {
+    min-width: 150px;
+    margin-bottom: 20px;
+  }
+  
+  /* Footer */
+  .footer {
+    padding: 2rem 1rem;
+  }
+  
+  .footer_bottom {
+    width: 100%;
+  }
+  
+}
+
+/* Medium Devices (tablets, 768px and down) */
+@media (max-width: 768px) {
+  /* Products grid */
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* Categories */
+  .categories-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  /* Hero */
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .hero .text {
+    margin-bottom: 30px;
+  }
+  
+  .hero .buttons {
+    justify-content: center;
+  }
+  
+  /* Offer section */
+  .offer-section {
+    grid-template-columns: 1fr;
+  }
+  
+  .offer-large {
+    height: 250px;
+    
+  }
+  
+  .offer-large button {
+    width: 30%;
+  }
+}
+
+/* Large Devices (laptops/desktops, 992px and up) */
+@media (min-width: 992px) {
+  /* Ensure proper max-width for content */
+  .top-categories, 
+  .featured-container,
+  .services-section {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* General responsive fixes */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Make sure all clickable elements are tappable on mobile */
+button, 
+a, 
+input[type="submit"], 
+input[type="button"] {
+  min-width: 44px;
+  min-height: 44px;
+}
+
+/* Prevent text overflow */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
   </style>
 </head>
 <body>
@@ -972,7 +1179,7 @@
         New Arrivals
         <img
           src="data:image/svg+xml,%3csvg%20width='21'%20height='21'%20viewBox='0%200%2021%2021'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M2.25181%2010.9107C2.74821%208.42435%202.60407%206.05745%202.56648%203.55937C2.55907%203.07151%202.15845%202.68332%201.67203%202.69008C1.18532%202.69685%200.796642%203.09927%200.803759%203.58714C0.839468%205.95591%200.994289%208.2047%200.523269%2010.5664C0.427889%2011.0441%200.73812%2011.5098%201.21514%2011.6034C1.692%2011.7%202.15672%2011.3884%202.25181%2010.9107Z'%20fill='%23224893'/%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M7.60162%2015.4506C11.54%2011.5184%2015.1939%206.5224%2017.6816%201.53078C17.8985%201.09479%2017.7213%200.564403%2017.2859%200.348345C16.8505%200.132287%2016.3207%200.308604%2016.1038%200.744602C13.6982%205.57085%2010.1645%2010.4028%206.3561%2014.2028C6.01193%2014.5474%206.01159%2015.1061%206.35525%2015.4498C6.69891%2015.7934%207.25745%2015.7952%207.60162%2015.4506Z'%20fill='%23224893'/%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M8.82204%2019.5022C12.6028%2019.9559%2016.425%2018.7286%2019.7721%2017.084C20.2087%2016.8677%2020.3889%2016.3392%2020.1747%2015.9046C19.9602%2015.467%2019.4314%2015.2874%2018.9947%2015.5008C15.9464%2016.9999%2012.4756%2018.1647%209.03213%2017.752C8.54903%2017.6939%208.10992%2018.0397%208.05208%2018.5216C7.99394%2019.0035%208.33923%2019.4441%208.82204%2019.5022Z'%20fill='%23224893'/%3e%3c/svg%3e"
-          alt="New Arrival Icon" style="position: absolute; top: -10px; right: -20px; width: 21px; height: 21px;">
+          alt="New Arrival Icon" style="position: absolute; top: -30px; right: -20px; width: 21px; height: 21px;">
       </span>
       <h1>Smart <span style="color: #224893;">Gadgets</span>, <br>Smarter Living</h1>
       <p>Experience the latest in tech with unbeatable quality and performance. Exclusive deals available for a limited
@@ -1125,7 +1332,7 @@
                 <div class="product-image-container">
                     <img src="../images/product_img.png" alt="Brother Printer Model 537" class="product-image">
                     <span class="gallery">
-                        <img src="images/gallery.png" alt="">9/12
+                        <img src="images/gallery.png" alt="">1/8
                     </span>
                 </div>
                 <div class="product-category">printers</div>
